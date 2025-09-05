@@ -1,0 +1,235 @@
+/* --- Hambúrguer animado para menu mobile --- */
+.menu-trigger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-trigger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.2s, transform 0.3s;
+}
+.menu-trigger span::before,
+.menu-trigger span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.2s;
+}
+.menu-trigger span::before {
+  top: -9px;
+}
+.menu-trigger span::after {
+  top: 9px;
+}
+.menu-trigger.active span {
+  background: transparent;
+}
+.menu-trigger.active span::before {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-trigger.active span::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Menu mobile responsivo */
+
+/* Desktop: título acima do slider no portfólio */
+@media (min-width: 992px) {
+  #portfolio {
+    display: block;
+  }
+  #portfolio .section-heading {
+    display: block;
+    margin: 0 auto 24px auto;
+    text-align: center;
+    max-width: 700px;
+  }
+}
+/* Esconde menu mobile por padrão */
+@media (max-width: 991.98px) {
+  .main-nav .nav {
+    transition: max-height 0.3s cubic-bezier(.4,0,.2,1);
+    overflow: hidden;
+    max-height: 0;
+    background: #f8f7f5;
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.04);
+    border-radius: 0 0 16px 16px;
+    margin-top: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 1000;
+  }
+  .main-nav.open .nav {
+    max-height: 500px;
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.08);
+  }
+}
+/* Centralizar ações do herói no mobile */
+@media (max-width: 991.98px) {
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .main-blue-button-hover,
+  .hero-phone {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+  .main-blue-button-hover a {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* custom.css: Scroll snap sections e animações */
+
+/* --- Variáveis CSS --- */
+:root {
+  --header-h: 88px;
+}
+
+/* --- Mobile: ajuste altura do header --- */
+@media (max-width: 991.98px) {
+  :root {
+    --header-h: 70px;
+  }
+}
+
+/* --- Configuração global de scroll --- */
+html, body {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Classe para seções com snap --- */
+.snap-section {
+  min-height: 100vh;
+  min-height: 100svh; /* Fallback modern browsers */
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding-block: clamp(24px, 5vh, 64px);
+  position: relative;
+}
+
+/* --- Garantir que o conteúdo das seções seja flexível --- */
+.snap-section > .container,
+.snap-section > .container-fluid {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Ajustes específicos para seções existentes --- */
+.main-banner.snap-section {
+  /* Banner já tem positioning próprio, manter compatibilidade */
+  padding-top: var(--header-h);
+}
+
+.contact-us.snap-section {
+  /* Seção de contato tem decorações posicionadas absolute */
+  overflow: hidden;
+}
+
+/* --- Prefers-reduced-motion: desativar snap e animações --- */
+@media (prefers-reduced-motion: reduce) {
+  html, body {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  
+  .snap-section {
+    scroll-snap-align: none;
+    scroll-snap-stop: auto;
+  }
+  
+  /* Desativar animações AOS */
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+  
+  [data-aos].aos-animate {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* --- Classe para desativar snap via JS se necessário --- */
+body.no-snap {
+  scroll-snap-type: none;
+}
+
+body.no-snap .snap-section {
+  scroll-snap-align: none;
+  scroll-snap-stop: auto;
+}
+
+/* --- Ajustes responsivos --- */
+@media (max-width: 767.98px) {
+  .snap-section {
+    padding-block: clamp(16px, 3vh, 32px);
+  }
+}
+
+/* --- Fallback iOS antigo --- */
+@supports not (min-height: 100svh) {
+  .snap-section {
+    min-height: 100vh;
+    min-height: calc(100vh - env(safe-area-inset-bottom));
+  }
+}
+
+/* --- Ajustes Mobile Específicos --- */
+
+/* 2. Portfólio: título acima do slide no mobile */
+@media (max-width: 991.98px) {
+  #portfolio .container {
+    order: 1;
+  }
+  #portfolio .container-fluid {
+    order: 2;
+    margin-top: 30px;
+  }
+  #portfolio {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 3. Parceiros: cards menores para caber 2 por linha no mobile */
+@media (max-width: 991.98px) {
+  .partners-carousel .item {
+    width: 48% !important;
+    margin: 1%;
+    display: inline-block;
+  }
+  .partners-carousel {
+    text-align: center;
+  }
+}
