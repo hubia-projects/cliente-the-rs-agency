@@ -1,3 +1,29 @@
+/* Customização do campo select do formulário de contato */
+form#contact select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7.293 8.293a1 1 0 011.414 0L10 9.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z"/></svg>') no-repeat right 1rem center/1.2em auto;
+  padding-right: 2.5em;
+  border: none;
+  border-bottom: 2px solid #e4e0d6;
+  font-size: 1rem;
+  color: #333;
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color 0.2s;
+}
+form#contact select:focus {
+  outline: none;
+  border-bottom: 2px solid #00bcd4;
+}
+form#contact select::-ms-expand {
+  display: none;
+}
+form#contact option {
+  color: #333;
+  background: #fff;
+}
 /*
 
 TemplateMo 565 Onix Digital
@@ -2038,7 +2064,7 @@ responsive
 
 /* Grid serviços */
 .services-container { padding-top: 4rem; }
-.services-grid .service-item { background:#fff; border:1px solid var(--rs-border); border-radius:18px; padding:30px 28px; box-shadow:0 4px 14px rgba(0,0,0,.03); transition:.3s; }
+.services-grid .service-item { background:#fff; border:1px solid var(--rs-border); border-radius:18px; padding:30px 28px; box-shadow:0 4px 14px rgba(0,0,0,.03); transition:.3s; text-align:center; }
 .services-grid .service-item:hover { box-shadow:0 6px 22px rgba(0,0,0,.07); transform:translateY(-4px); }
 .services-grid .service-item h4 { font-size:1.05rem; margin-bottom:12px; color:var(--rs-text); }
 .services-grid .service-item p { margin:0; padding:0; border:0; font-size:.9rem; line-height:1.5; color:var(--rs-muted); }
@@ -2090,19 +2116,22 @@ form#contact select:focus { border-color: var(--rs-accent-dark); }
 .hero-phone { display:inline-flex; align-items:center; gap:8px; font-weight:500; color:var(--rs-accent-dark); padding:10px 0; }
 .hero-phone i { background:var(--rs-accent-dark); color:#fff; width:38px; height:38px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; }
 
-.service-item .service-icon { width:54px; height:54px; margin:0 0 15px; }
+.service-item .service-icon { width:54px; height:54px; margin:0 auto 15px; display:flex; align-items:center; justify-content:center; }
 .service-item .service-icon img { width:100%; height:100%; object-fit:contain; }
 
 /* Remover traço/linha atrás logos (usando pseudo removido) */
 .partners-section .partner-item .icon { position:relative; padding:0; margin:0 auto 15px; width:130px; height:130px; display:flex; align-items:center; justify-content:center; }
 .partners-section .partner-item .icon:before, .partners-section .partner-item .icon:after { content:none!important; }
 .partners-section .partner-item { border:1px solid var(--rs-border); }
+.partners-section .partner-item { border-bottom:none!important; }
+.partners-section .partner-item hr, .partners-section .partner-item::after, .partners-section .partner-item::before { display:none!important; border:none!important; background:none!important; }
 .partners-section .partner-item p { margin:10px 0 0; }
 
 /* Floating labels */
-fieldset.floating { position:relative; margin:0 0 32px; padding:0; border:0; }
-fieldset.floating input, fieldset.floating textarea, fieldset.floating select { background:transparent; width:100%; border:none; border-bottom:1px solid #b3d5e8; padding:10px 0 8px; font-size:15px; font-family:inherit; color:#222; border-radius:0; }
-fieldset.floating textarea { min-height:120px; padding-top:18px; }
+fieldset.floating { position:relative; margin:0 0 24px; padding:0; border:0; }
+fieldset.floating input, fieldset.floating textarea, fieldset.floating select { background:transparent; width:100%; border:none; border-bottom:1px solid #b3d5e8; padding:10px 0 8px; font-size:15px; font-family:inherit; color:#222; border-radius:0; outline:none; }
+fieldset.floating input:focus, fieldset.floating textarea:focus { border-bottom-color: var(--rs-accent-dark); }
+fieldset.floating textarea { min-height:70px; padding-top:10px; padding-bottom:8px; resize:vertical; line-height:1.4; }
 fieldset.floating label { position:absolute; left:0; top:10px; font-size:14px; color:#666; pointer-events:none; transition:.25s; letter-spacing:.5px; }
 fieldset.floating input:focus + label,
 fieldset.floating input:not(:placeholder-shown) + label,
@@ -2113,17 +2142,89 @@ fieldset.floating select:not([value=""]) + label { top:-8px; font-size:11px; col
 
 /* Custom select wrapper */
 .custom-select-wrapper { position:relative; }
-.custom-select-wrapper select { background: #fff; border:1px solid #ccc; padding:14px 40px 6px 12px; border-radius:8px; line-height:1.2; font-size:14px; border-bottom:1px solid #ccc; }
-.custom-select-wrapper select:focus { outline:none; border-color: var(--rs-accent-dark); }
-.custom-select-wrapper:after { content:'\f107'; font-family:'FontAwesome'; position:absolute; right:14px; top:50%; transform:translateY(-50%); color:var(--rs-accent-dark); font-size:18px; pointer-events:none; }
-.custom-select-wrapper select + label { position:absolute; left:12px; top:14px; font-size:13px; color:#666; transition:.25s; background:#fff; padding:0 4px; }
-.custom-select-wrapper select.has-value + label, .custom-select-wrapper select:focus + label { top:-8px; font-size:11px; color:var(--rs-accent-dark); }
+.custom-select-wrapper select { 
+  background: transparent; 
+  border:none; 
+  border-bottom:1px solid #b3d5e8; 
+  padding:10px 40px 8px 0; 
+  border-radius:0; 
+  line-height:1.2; 
+  font-size:15px; 
+  color:#222; 
+  font-family:inherit; 
+  cursor:pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.custom-select-wrapper select:focus { 
+  outline:none; 
+  border-bottom-color: var(--rs-accent-dark); 
+}
+.custom-select-wrapper:after { 
+  content:'\f107'; 
+  font-family:'FontAwesome'; 
+  position:absolute; 
+  right:0; 
+  top:50%; 
+  transform:translateY(-50%); 
+  color:#666; 
+  font-size:16px; 
+  pointer-events:none; 
+  transition: transform 0.2s ease;
+}
+.custom-select-wrapper select:focus + label + .custom-select-wrapper:after {
+  transform:translateY(-50%) rotate(180deg);
+}
+.custom-select-wrapper select + label { 
+  position:absolute; 
+  left:0; 
+  top:10px; 
+  font-size:14px; 
+  color:#666; 
+  transition:.25s; 
+  background:transparent; 
+  padding:0; 
+  font-family:inherit;
+}
+.custom-select-wrapper select.has-value + label, 
+.custom-select-wrapper select:focus + label { 
+  top:-8px; 
+  font-size:11px; 
+  color:var(--rs-accent-dark); 
+  font-weight:500; 
+}
+.custom-select-wrapper select option {
+  background: #fff;
+  color: #222;
+  font-family:inherit;
+  font-size:15px;
+  padding: 8px 12px;
+}
 
 /* Contact info color override */
 .contact-us .info a { color:#222; font-weight:500; }
 .contact-us .info i { background:var(--rs-accent-dark); }
 
 .contact-title { font-size:1.6rem; font-weight:800; text-align:center; margin-bottom:30px; }
+
+/* Ajustes específicos para o formulário de contato */
+form#contact .col-lg-12:nth-child(3) fieldset.floating { margin-bottom:20px; } /* Campo Mensagem */
+form#contact .col-lg-12:nth-child(4) fieldset.floating { margin-bottom:20px; } /* Campo Melhor forma de contato */
+form#contact .col-lg-12:nth-child(5) fieldset { margin-top:8px; } /* Botão Enviar */
+
+/* Melhoria geral dos campos do formulário */
+form#contact fieldset.floating input,
+form#contact fieldset.floating textarea,
+form#contact .custom-select-wrapper select {
+  transition: border-bottom-color 0.3s ease;
+}
+
+form#contact fieldset.floating input:hover,
+form#contact fieldset.floating textarea:hover,
+form#contact .custom-select-wrapper select:hover {
+  border-bottom-color: #9ec5d8;
+}
 
 /* AOS fade-up fallback if lib falhar */
 [data-aos="fade-up"] { transform:translateY(40px); }
