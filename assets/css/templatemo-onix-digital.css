@@ -1,3 +1,77 @@
+/* Ajuste de altura para sections principais */
+.snap-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Evita que elementos decorativos vazem para outras sections */
+  z-index: 1; /* Cria contexto de empilhamento para cada section */
+  padding: 0; /* Remove padding padrão que pode causar overflow */
+}
+
+/* Primeira section (Hero) com altura maior */
+.main-banner.snap-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Permite elementos decorativos do hero */
+}
+
+/* Garantir que cada section mantenha seu conteúdo separado */
+.snap-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Conteúdo principal sempre acima dos elementos decorativos */
+}
+
+/* Evitar vazamento de conteúdo entre sections */
+.snap-section .section-heading {
+  position: relative;
+  z-index: 3;
+}
+
+/* Limitar elementos decorativos ao contexto da sua section */
+.our-services .services-left-dec,
+.our-services .services-right-dec {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none; /* Não interfere com interações */
+}
+
+/* Responsividade para diferentes tamanhos de tela */
+@media (max-width: 991px) {
+  .snap-section {
+    min-height: 80vh;
+    padding: 60px 0;
+  }
+  
+  .main-banner.snap-section {
+    min-height: 100vh;
+  }
+  
+  /* Esconder elementos decorativos em telas menores para evitar vazamentos */
+  .our-services .services-left-dec,
+  .our-services .services-right-dec {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .snap-section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  
+  .main-banner.snap-section {
+    min-height: 100vh;
+    padding: 80px 0;
+  }
+}
 /* Customização do campo select do formulário de contato */
 form#contact select {
   appearance: none;
@@ -912,17 +986,6 @@ Banner Style
   height: 532px;
 }
 
-.main-banner:before {
-  content: '';
-  background-image: url(../images/banner-right-image.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  right: 0;
-  top: 100px;
-  width: 819px;
-  height: 674px;
-}
 
 .main-banner .item {
   margin-right: 45px;
@@ -1014,29 +1077,33 @@ Services Style
 .our-services .services-left-dec img {
   width: 387px;
   height: 638px;
-  left: -80px;
-  top: -140px;
+  left: -50px; /* Reduzido para não vazar */
+  top: 50px; /* Ajustado para ficar dentro da section */
   position: absolute;
   z-index: 1;
+  max-height: 80vh; /* Limita altura para não vazar */
 }
 
 .our-services .services-right-dec img {
   width: 305px;
   height: 305px;
-  right: 25px;
-  bottom: -120px;
+  right: -25px; /* Ajustado para não vazar */
+  bottom: 20px; /* Ajustado para ficar dentro da section */
   position: absolute;
   z-index: 1;
 }
 
 .our-services .container {
   position: relative;
+  z-index: 3; /* Garante que o conteúdo fique acima dos decorativos */
 }
 
 .our-services {
   position: relative;
   margin-top: 0px;
-  padding-top: 120px;
+  padding-top: 80px; /* Reduzido para melhor fit na section */
+  padding-bottom: 80px; /* Adiciona padding inferior */
+  overflow: hidden; /* Evita vazamento de elementos decorativos */
 }
 
 .our-services .section-heading {

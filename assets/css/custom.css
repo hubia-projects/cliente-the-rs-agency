@@ -1,0 +1,228 @@
+/* Parceiros - cards maiores, logos maiores e altura padronizada */
+.partners-carousel .partner-item {
+	min-width: 280px;
+	max-width: 320px;
+	height: 360px;
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+	margin: 0 18px;
+	padding: 32px 18px 18px 18px;
+	transition: box-shadow 0.2s;
+    border-bottom: 1px solid #22222231 !important;
+}
+.partners-carousel .partner-item:hover {
+	box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
+}
+.partners-carousel .partner-item .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 200px;
+	margin-bottom: 18px;
+}
+.partners-carousel .partner-item .icon img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+.partners-carousel .partner-item p {
+	margin: 0;
+	text-align: center;
+	font-size: 1.13rem;
+	color: #222;
+	flex: 1 1 auto;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+@media (max-width: 991px) {
+	.partners-carousel .partner-item {
+		min-width: 180px;
+		max-width: 220px;
+		height: 220px;
+		padding: 18px 8px 8px 8px;
+	}
+	.partners-carousel .partner-item .icon {
+		width: 70px;
+		height: 70px;
+		margin-bottom: 10px;
+	}
+	.partners-carousel .partner-item p {
+		font-size: 0.98rem;
+	}
+}
+/* Botão moderno para o formulário de contato */
+.main-button, button.main-button, #form-submit.main-button {
+	background: linear-gradient(90deg, #c2c4b8 0%, #716969 100%);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 30px;
+	font-size: 1.2rem;
+	font-weight: 600;
+	box-shadow: 0 2px 8px rgba(113,105,105,0.08);
+	cursor: pointer;
+	transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+	outline: none;
+	letter-spacing: 0.5px;
+	margin-top: 12px;
+	display: inline-block;
+}
+
+.main-button2, button.main-button2{
+	background: transparent !important;
+	padding: 0px 30px !important;
+	margin-top: 0px !important;
+    margin-left: 10px !important;
+}
+
+.main-button:hover, button.main-button:hover, #form-submit.main-button:hover {
+	background: linear-gradient(90deg, #716969 0%, #8c8d86 100%);
+	box-shadow: 0 4px 16px rgba(113,105,105,0.16);
+	transform: translateY(-2px) scale(1.04);
+	color: #fff;
+}
+/* Esconde o label do select quando um valor é selecionado */
+fieldset.floating label.hide-label {
+	display: none;
+}
+
+/* Seção de Redes Sociais */
+.social-media-section {
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	padding: 80px 0;
+	margin: 60px 0;
+}
+
+.social-icons-wrapper {
+	padding: 40px 20px;
+}
+
+.social-icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 120px;
+	background: #fff;
+	border-radius: 18px;
+	text-decoration: none;
+	color: #333;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+	margin: 10px;
+}
+
+.social-icon:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+	text-decoration: none;
+}
+
+.social-icon i {
+	font-size: 2.5rem;
+	margin-bottom: 8px;
+}
+
+.social-icon span {
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.social-icon.instagram:hover {
+	background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+	color: white;
+}
+
+.social-icon.youtube:hover {
+	background: #ff0000;
+	color: white;
+}
+
+.social-icon.tiktok:hover {
+	background: #000;
+	color: white;
+}
+
+.social-icon.whatsapp:hover {
+	background: #25d366;
+	color: white;
+}
+
+@media (max-width: 768px) {
+	.social-icon {
+		width: 120px;
+		height: 100px;
+		margin: 8px;
+	}
+	.social-icon i {
+		font-size: 2rem;
+	}
+	.social-icon span {
+		font-size: 0.8rem;
+	}
+}
+/* Espaçamento extra entre a section 3 (about) e a section 4 (portfolio) */
+#about.snap-section {
+	margin-bottom: 60px;
+}
+#portfolio.our-portfolio.snap-section {
+	margin-top: 60px;
+}
+/* Corrige layout do portfólio: texto acima das imagens */
+#portfolio.our-portfolio.snap-section {
+	display: block !important;
+	align-items: unset !important;
+	justify-content: unset !important;
+}
+
+/* Mobile Responsivity Fixes */
+@media (max-width: 768px) {
+	/* Fix 1: Add margin-top to "RISE AND SHAPE" text in section 1 */
+	.main-banner .left-content h4 {
+		margin-top: 30px !important;
+	}
+	
+	/* Fix 2: Center image in about section (section 3) */
+	#about .right-image {
+		text-align: center;
+	}
+	
+	#about .right-image img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Fix 3: Partner cards - show exactly 2 without cutting */
+	.partners-carousel .partner-item {
+		min-width: 140px !important;
+		max-width: 160px !important;
+		margin: 0 5px !important;
+		flex: 0 0 calc(50% - 10px) !important;
+	}
+	
+	.partners-carousel .owl-stage {
+		display: flex !important;
+		align-items: stretch !important;
+	}
+	
+	.partners-carousel .owl-item {
+		width: calc(50% - 10px) !important;
+		margin-right: 10px !important;
+	}
+	
+	.partners-carousel .owl-item:last-child {
+		margin-right: 0 !important;
+	}
+}

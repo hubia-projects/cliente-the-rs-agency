@@ -34,7 +34,7 @@
   // Parceiros carrossel com configuração responsiva e autoplay
   if ($('.partners-carousel').length) {
     $('.partners-carousel').owlCarousel({
-      loop: true,
+      loop: false,
       autoplay: true,
       autoplayTimeout: 3500,
       autoplayHoverPause: true,

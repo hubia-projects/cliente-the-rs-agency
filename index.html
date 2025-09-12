@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -24,6 +23,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <!-- Custom CSS para scroll snap e animações -->
   <link rel="stylesheet" href="assets/css/custom.css" />
+  <link rel="stylesheet" href="assets/css/main-banner-custom.css" />
   <!--
 
 TemplateMo 565 Onix Digital
@@ -73,6 +73,7 @@ https://templatemo.com/tm-565-onix-digital
                 <a href="#portfolio">Portfólio</a>
               </li>
               <li class="scroll-to-section"><a href="#parceiros">Parceiros</a></li>
+              <li class="scroll-to-section"><a target="_blank"  href="/blog.html">Blog</a></li>
 
               <li class="scroll-to-section">
                 <div class="main-red-button-hover">
@@ -93,31 +94,35 @@ https://templatemo.com/tm-565-onix-digital
   <!-- ***** Header Area End ***** -->
 
   <div class="main-banner snap-section" id="top" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 align-self-center" data-aos="fade-up" data-aos-delay="50">
-          <div class="hero-static">
-            <h6 class="hero-eyebrow">Bem-vindo à THE RS AGENCY</h6>
-            <h1 class="hero-title"> <span class="hero-word">RISE</span> <em class="hero-and">AND</em> <span
-                class="hero-highlight">SHAPE</span></h1>
-            <p class="hero-sub">Resolvemos as tuas ideias com soluções profissionais em impressão 3D e design digital,
-              tecnologia de ponta e entrega personalizada.</p>
-            <div class="hero-actions">
-              <div class="main-blue-button-hover">
-                <a href="#contact">Fale Connosco Agora</a>
-              </div>
-              <a class="hero-phone" href="tel:+351918741460"><i class="fa fa-phone"></i> +351 918 741 460</a>
+    <div class="container"
+      style="min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div
+        class="main-banner-flex d-flex flex-column flex-lg-row align-items-center justify-content-center w-100 gap-5">
+        <div class="hero-static text-center text-lg-start" style="max-width: 550px; width: 100%;">
+          <h6 class="hero-eyebrow">Bem-vindo à THE RS AGENCY</h6>
+          <h1 class="hero-title"> <span class="hero-word">RISE</span> <em class="hero-and">AND</em> <span
+              class="hero-highlight">SHAPE</span></h1>
+          <p class="hero-sub">Resolvemos as tuas ideias com soluções profissionais em impressão 3D e design digital,
+            tecnologia de ponta e entrega personalizada.</p>
+          <div
+            class="hero-actions d-flex flex-column flex-md-row justify-content-center justify-content-lg-start align-items-center gap-3 mt-4">
+            <div class="main-blue-button-hover mb-2 mb-md-0">
+              <a href="#contact">Fale Connosco Agora</a>
             </div>
+            <a class="hero-phone" target="_blank"  href="https://wa.me/351918741460"><i class="fa fa-whatsapp"></i> +351 918 741 460</a>
           </div>
         </div>
-        <div class="col-lg-5 d-none d-lg-block">
-          <!-- espaço visual / imagem decorativa mantido por pseudo-elementos -->
+        <div class="main-banner-image d-flex justify-content-center align-items-center mt-4 mt-lg-0"
+          style="max-width: 800px; width: 100%;">
+          <img src="assets/images/banner-right-image2.jpg" alt="Impressora 3D e workspace"
+            class="img-fluid rounded shadow" style="width: 100%; height: auto;" loading="eager" />
         </div>
       </div>
     </div>
   </div>
 
-  <div id="services" class="our-services section snap-section" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
+  <div id="services" class="our-services section snap-section" data-aos="fade-up" data-aos-duration="700"
+    data-aos-offset="120">
     <!-- <div class="services-right-dec">
       <img src="assets/images/services-right-dec.png" alt="Elemento decorativo circular" loading="lazy" />
     </div> -->
@@ -129,8 +134,8 @@ https://templatemo.com/tm-565-onix-digital
         <div class="col-lg-6 offset-lg-3" data-aos="fade-up">
           <div class="section-heading">
             <h2>
-              Oferecemos <em>os melhores serviços</em> com as
-              <span>nossas ferramentas</span>
+              Criamos <em>o melhor serviço</em> para entregar o
+              <span>melhor produto</span>
             </h2>
           </div>
         </div>
@@ -138,14 +143,14 @@ https://templatemo.com/tm-565-onix-digital
       <div class="row services-grid" data-aos="fade-up" data-aos-delay="100">
         <div class="col-md-4 mb-4">
           <div class="service-item h-100">
-            <div class="service-icon"><img src="assets/images/service-icon-01.png" alt="Ícone design 3D"></div>
+            <div class="service-icon"><img src="assets/images/service-icon-011.png" alt="Ícone design 3D"></div>
             <h4>Design e impressões 3D personalizadas</h4>
             <p>Acompanhamos todo o processo de criação e impressão dos teus projetos.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="service-item h-100">
-            <div class="service-icon"><img src="assets/images/service-icon-02.png"
+            <div class="service-icon"><img src="assets/images/service-icon-022.png"
                 alt="Ícone impressões filamento ou resina"></div>
             <h4>Impressões 3D com filamento ou resina</h4>
             <p>Resposta para impressões grandes ou de elevada precisão.</p>
@@ -153,7 +158,7 @@ https://templatemo.com/tm-565-onix-digital
         </div>
         <div class="col-md-4 mb-4">
           <div class="service-item h-100">
-            <div class="service-icon"><img src="assets/images/service-icon-03.png" alt="Ícone modelos gratuitos"></div>
+            <div class="service-icon"><img src="assets/images/maker-world.png" alt="Ícone modelos gratuitos"></div>
             <h4>Modelos originais gratuitos para impressão</h4>
             <p>Maker World</p>
           </div>
@@ -162,19 +167,20 @@ https://templatemo.com/tm-565-onix-digital
     </div>
   </div>
 
-  <div id="about" class="about-us section snap-section" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
+  <div id="about" class="about-us section snap-section" data-aos="fade-up" data-aos-duration="700"
+    data-aos-offset="120">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="left-image">
-            <img src="assets/images/about-left-image.png" alt="Colaboradores a trabalhar em projeto de impressão 3D"
+            <img src="assets/images/print-3d-1.jpg" alt="Colaboradores a trabalhar em projeto de impressão 3D"
               loading="lazy" />
           </div>
         </div>
         <div class="col-lg-6">
           <div class="section-heading">
             <h2>
-              Passa de
+              Passa da
               <em>imaginação</em> <br> para a
               <span>Realidade</span>
             </h2>
@@ -183,11 +189,11 @@ https://templatemo.com/tm-565-onix-digital
               Aqui oferecemos vida ás tuas ideias.
             </p>
             <div class="row">
-              <div class="col-lg-4">
-                <div class="fact-item">
-                  <div class="count-area-content">
-                    <div class="icon">
-                      <img src="assets/images/service-icon-01.png" alt="" />
+              <div class="row align-items-start justify-content-center" style="display: flex; align-items: flex-start;">
+                <div class="col-lg-4 d-flex flex-column align-items-center">
+                  <div class="fact-item w-100 d-flex flex-column align-items-center">
+                    <div class="icon" >
+                      <img src="assets/images/3d-modeling.png" alt="" />
                     </div>
                     <div class="count-digit">+300</div>
                     <div class="count-title">Impressões personalizadas</div>
@@ -196,12 +202,10 @@ https://templatemo.com/tm-565-onix-digital
                     </p>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="fact-item">
-                  <div class="count-area-content">
-                    <div class="icon">
-                      <img src="assets/images/service-icon-02.png" alt="" />
+                <div class="col-lg-4 d-flex flex-column align-items-center">
+                  <div class="fact-item w-100 d-flex flex-column align-items-center">
+                    <div class="icon" >
+                      <img src="assets/images/download.png" alt="" />
                     </div>
                     <div class="count-digit">+150</div>
                     <div class="count-title">Downloads - MakerWorld</div>
@@ -210,12 +214,10 @@ https://templatemo.com/tm-565-onix-digital
                     </p>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="fact-item">
-                  <div class="count-area-content">
-                    <div class="icon">
-                      <img src="assets/images/service-icon-03.png" alt="" />
+                <div class="col-lg-4 d-flex flex-column align-items-center">
+                  <div class="fact-item w-100 d-flex flex-column align-items-center">
+                    <div class="icon" >
+                      <img src="assets/images/customer-review.png" alt="" />
                     </div>
                     <div class="count-digit">+50</div>
                     <div class="count-title">Clientes Satisfeitos</div>
@@ -230,181 +232,171 @@ https://templatemo.com/tm-565-onix-digital
     </div>
   </div>
 
-  <div id="portfolio" class="our-portfolio section snap-section" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
-    <div class="portfolio-left-dec">
-      <img src="assets/images/portfolio-left-dec.png" alt="" />
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="section-heading">
-            <h2>
-              Um <em>portefólio</em> de imagens que falam por
-              <span>si</span>
-            </h2>
-          </div>
-        </div>
+  <div id="portfolio" class="our-portfolio section snap-section" data-aos="fade-up" data-aos-duration="700"
+    data-aos-offset="120">
+    <div class="portfolio-left-dec"></div>
+    <div style="width: 100%; display: block;">
+      <div class="section-heading" style="text-align: center; margin-bottom: 40px; width: 100%;">
+        <h2 style="display: inline-block;">
+          Um <em>portefólio</em> de imagens que falam por <span>si</span>
+        </h2>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-carousel owl-portfolio">
-            <div class="item">
-              <div class="thumb">
-               <img src="assets/images/portfolio-01.jpg" alt="Projeto 3D 01" loading="lazy" decoding="async" />
+    <div class="container-fluid" style="width: 100%;">
+      <div class="owl-carousel owl-portfolio">
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-01.jpg" alt="Projeto 3D 01" loading="lazy" decoding="async" />
 
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent">
-                      <h4>First Project</h4>
-                    </a>
-                    <span>Plot Listing</span>
-                  </div>
-                </div>
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent">
+                  <h4>First Project</h4>
+                </a>
+                <span>Plot Listing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-02.jpg" alt="Projeto 3D 02" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>Project Two</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-02.jpg" alt="Projeto 3D 02" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>Project Two</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-03.jpg" alt="Projeto 3D 03" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent">
-                      <h4>Third Project</h4>
-                    </a>
-                    <span>Space Dynamic SEO</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-03.jpg" alt="Projeto 3D 03" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent">
+                  <h4>Third Project</h4>
+                </a>
+                <span>Space Dynamic SEO</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-04.jpg" alt="Projeto 3D 04" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>Project Four</h4>
-                    </a>
-                    <span>Website Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-04.jpg" alt="Projeto 3D 04" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>Project Four</h4>
+                </a>
+                <span>Website Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-01.jpg" alt="Projeto 3D 01" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>Fifth Project</h4>
-                    </a>
-                    <span>Digital Assets</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-01.jpg" alt="Projeto 3D 01" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>Fifth Project</h4>
+                </a>
+                <span>Digital Assets</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-02.jpg" alt="Projeto 3D 02" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>Sixth Project</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-02.jpg" alt="Projeto 3D 02" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>Sixth Project</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-03.jpg" alt="Projeto 3D 03" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>7th Project</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-03.jpg" alt="Projeto 3D 03" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>7th Project</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-04.jpg" alt="Projeto 3D 04" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>8th Project</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-04.jpg" alt="Projeto 3D 04" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>8th Project</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-01.jpg" alt="Projeto 3D 01" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>9th Project</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-01.jpg" alt="Projeto 3D 01" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>9th Project</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-02.jpg" alt="Projeto 3D 02" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>Project Ten</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-02.jpg" alt="Projeto 3D 02" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>Project Ten</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-03.jpg" alt="Projeto 3D 03" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>Project Eleven</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-03.jpg" alt="Projeto 3D 03" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>Project Eleven</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="assets/images/portfolio-04.jpg" alt="Projeto 3D 04" loading="lazy" />
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#">
-                      <h4>12th Project</h4>
-                    </a>
-                    <span>SEO &amp; Marketing</span>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb">
+            <img src="assets/images/portfolio-04.jpg" alt="Projeto 3D 04" loading="lazy" />
+            <div class="hover-effect">
+              <div class="inner-content">
+                <a href="#">
+                  <h4>12th Project</h4>
+                </a>
+                <span>SEO &amp; Marketing</span>
               </div>
             </div>
           </div>
@@ -412,15 +404,12 @@ https://templatemo.com/tm-565-onix-digital
       </div>
     </div>
   </div>
+  </div>
+  </div>
 
-  <div id="parceiros" class="our-services section partners-section snap-section" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
-    <div class="services-right-dec">
-      <img src="assets/images/services-right-dec.png" alt="Elemento decorativo circular" loading="lazy" />
-    </div>
+  <div id="parceiros" class="our-services section partners-section snap-section" data-aos="fade-up"
+    data-aos-duration="700" data-aos-offset="120">
     <div class="container">
-      <div class="services-left-dec">
-        <img src="assets/images/services-left-dec.png" alt="Elemento decorativo abstrato" loading="lazy" />
-      </div>
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
@@ -437,45 +426,35 @@ https://templatemo.com/tm-565-onix-digital
               <div class="icon">
                 <img src="assets/images/parceiros-icon-01.png" alt="Logo parceiro 1" loading="lazy" />
               </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Descrição empresa 1.</p>
+              <p style="border: none; border-bottom: none; margin-top: 0;">Ovarense Basquetebol </p>
             </div>
             <div class="item partner-item">
               <div class="icon">
                 <img src="assets/images/parceiros-icon-02.png" alt="Logo parceiro 2" loading="lazy" />
               </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Descrição empresa 2.</p>
+              <p style="border: none; border-bottom: none; margin-top: 0;">Associação Desportiva Sanjoanense.</p>
             </div>
             <div class="item partner-item">
               <div class="icon">
                 <img src="assets/images/parceiros-icon-03.png" alt="Logo parceiro 3" loading="lazy" />
               </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Descrição empresa 3.</p>
+              <p style="border: none; border-bottom: none; margin-top: 0;">Associação Desportiva Ovarense</p>
             </div>
             <div class="item partner-item">
               <div class="icon">
                 <img src="assets/images/parceiros-icon-04.png" alt="Logo parceiro 4" loading="lazy" />
               </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Descrição empresa 4.</p>
+              <p style="border: none; border-bottom: none; margin-top: 0;">CP Esgueira Basket</p>
             </div>
-            <div class="item partner-item">
-              <div class="icon">
-                <img src="assets/images/parceiros-icon-01.png" alt="Logo parceiro 5" loading="lazy" />
-              </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Descrição empresa 5.</p>
-            </div>
-            <div class="item partner-item">
-              <div class="icon">
-                <img src="assets/images/parceiros-icon-02.png" alt="Logo parceiro 6" loading="lazy" />
-              </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Descrição empresa 6.</p>
-            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="contact" class="contact-us section snap-section" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
+  <div id="contact" class="contact-us section snap-section" data-aos="fade-up" data-aos-duration="700"
+    data-aos-offset="120">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 contact-map-wrapper" data-aos="fade-right">
@@ -485,8 +464,8 @@ https://templatemo.com/tm-565-onix-digital
                 width="100%" height="360px" frameborder="0" style="border: 0" allowfullscreen=""></iframe>
             </div>
             <div class="info">
-              <span class="contact-info"><i class="fa fa-phone"></i>
-                <a style="color: black;" href="tel:+351918741460">+351 918 741 460</a>
+              <span class="contact-info"><i class="fa fa-whatsapp"></i>
+                <a style="color: black;" target="_blank"  href="https://wa.me/351918741460">+351 918 741 460</a>
               </span>
               <span class="contact-info"><i class="fa fa-envelope"></i>
                 <a style="color: black;" href="mailto:therscreativeagency@gmail.com">therscreativeagency@gmail.com</a>
@@ -510,13 +489,6 @@ https://templatemo.com/tm-565-onix-digital
                   <input type="email" name="email" id="contact-email" placeholder=" " required />
                   <label for="contact-email">O seu Email</label>
                 </fieldset>
-
-              </div>
-              <div class="col-lg-12">
-                <fieldset class="floating">
-                  <textarea name="mensagem" id="mensagem" rows="4" placeholder=" " required></textarea>
-                  <label for="mensagem">Mensagem</label>
-                </fieldset>
               </div>
               <div class="col-lg-12">
                 <fieldset class="floating">
@@ -529,8 +501,15 @@ https://templatemo.com/tm-565-onix-digital
                       <option value="sms">SMS</option>
                       <option value="outro">Outro</option>
                     </select>
-                    <label for="best-contact">Melhor forma de contato</label>
                   </div>
+                  <label for="best-contact">Melhor forma de contato</label>
+
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset class="floating">
+                  <textarea name="mensagem" id="mensagem" rows="4" placeholder=" " required></textarea>
+                  <label for="mensagem">Mensagem</label>
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -543,13 +522,45 @@ https://templatemo.com/tm-565-onix-digital
         </div>
       </div>
     </div>
-    <div class="contact-dec">
-      <img src="assets/images/contact-dec.png" alt="" />
-    </div>
-    <div class="contact-left-dec">
-      <img src="assets/images/contact-left-dec.png" alt="" />
+
+  </div>
+
+  <!-- ***** Social Media Section Start ***** -->
+  <div id="social-media" class="social-media-section section" data-aos="fade-up" data-aos-duration="700" data-aos-offset="120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading text-center">
+            <h2>Siga-nos nas <em>Redes Sociais</em></h2>
+            <p>Acompanhe o nosso trabalho e fique por dentro das novidades</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="social-icons-wrapper d-flex justify-content-center align-items-center gap-4 flex-wrap">
+            <a href="https://instagram.com/thersagency" target="_blank" class="social-icon instagram" title="Instagram">
+              <i class="fa fa-instagram"></i>
+              <span>@thersagency</span>
+            </a>
+            <a href="https://youtube.com/@TheRS.Agency" target="_blank" class="social-icon youtube" title="YouTube">
+              <i class="fa fa-youtube-play"></i>
+              <span>@TheRS.Agency</span>
+            </a>
+            <a href="https://tiktok.com/@thersagency" target="_blank" class="social-icon tiktok" title="TikTok">
+              <i class="fa fa-music"></i>
+              <span>@thersagency</span>
+            </a>
+            <a href="https://wa.me/351918741460" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+              <i class="fa fa-whatsapp"></i>
+              <span>+351 918 741 460</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- ***** Social Media Section End ***** -->
 
   <div id="subscribe" class="subscribe">
     <div class="container">
@@ -607,10 +618,12 @@ https://templatemo.com/tm-565-onix-digital
           <div class="services footer-item">
             <h4>Serviços</h4>
             <ul>
-              <li><a href="#">Desenvolvimento SEO</a></li>
-              <li><a href="#">Crescimento Empresarial</a></li>
-              <li><a href="#">Gestão de Redes Sociais</a></li>
-              <li><a href="#">Otimização de Websites</a></li>
+              <li><a href="#top">Início</a></li>
+              <li><a href="#services">Serviços</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#portfolio">Portfólio</a></li>
+              <li><a href="#parceiros">Parceiros</a></li>
+              <li><a href="#contact">Contacte-nos</a></li>
             </ul>
           </div>
         </div>
@@ -622,7 +635,7 @@ https://templatemo.com/tm-565-onix-digital
             <form action="#" method="get">
               <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="O seu Email"
                 required="" />
-              <button type="submit" id="form-submit" class="main-button">
+              <button type="submit" id="form-submit" class="main-button main-button2">
                 <i class="fa fa-paper-plane-o"></i>
               </button>
             </form>
@@ -631,7 +644,7 @@ https://templatemo.com/tm-565-onix-digital
         <div class="col-lg-12">
           <div class="copyright">
             <p>
-              Copyright © 2025 RS Agency. Todos os direitos reservados.
+              Copyright © 2025 The RS Agency. Todos os direitos reservados.
 
             </p>
           </div>
@@ -641,53 +654,61 @@ https://templatemo.com/tm-565-onix-digital
   </footer>
 
   <!-- Scripts -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-<script src="assets/js/owl-carousel.js" defer></script>
-<script src="assets/js/animation.js" defer></script>
-<script src="assets/js/imagesloaded.js" defer></script>
-<script src="assets/js/custom.js" defer></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/owl-carousel.js" defer></script>
+  <script src="assets/js/animation.js" defer></script>
+  <script src="assets/js/imagesloaded.js" defer></script>
+  <script src="assets/js/custom.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
 
-<script>
-  // Inicialização AOS e configurações básicas
-  document.addEventListener('DOMContentLoaded', function () {
-    // Prefers-reduced-motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      document.body.classList.add('no-snap');
-      AOS.init({ disable: true, once: true });
-    } else {
-      AOS.init({ once: true, duration: 700, easing: 'ease-out-quart', offset: 120, anchorPlacement: 'top-bottom' });
-    }
+  <script>
+    // Inicialização AOS e configurações básicas
+    document.addEventListener('DOMContentLoaded', function () {
+      // Prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.body.classList.add('no-snap');
+        AOS.init({ disable: true, once: true });
+      } else {
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-quart', offset: 120, anchorPlacement: 'top-bottom' });
+      }
 
-    // Floating label helper para <select>
-    document.querySelectorAll('fieldset.floating select').forEach(sel => {
-      function toggle(){ sel.classList.toggle('has-value', !!sel.value); }
-      sel.addEventListener('change', toggle); toggle();
-    });
-
-    // CTA "Fale connosco agora": scroll suave para #contact com offset do header
-    Array.from(document.querySelectorAll('.main-blue-button-hover a, .main-red-button-hover a')).forEach(function(el) {
-      el.addEventListener('click', function(ev) {
-        var href = el.getAttribute('href');
-        if (!href || href.charAt(0) !== '#') return; // links externos deixar intactos
-        var target = document.querySelector(href);
-        if (target) {
-          ev.preventDefault();
-          // Calcular offset do header
-          var headerHeight = document.querySelector('.header-area')?.offsetHeight || 80;
-          var targetTop = target.offsetTop - headerHeight;
-          window.scrollTo({ 
-            top: targetTop, 
-            behavior: 'smooth' 
-          });
+      // Floating label helper para <select>
+      document.querySelectorAll('fieldset.floating select').forEach(sel => {
+        const label = sel.closest('fieldset').querySelector('label');
+        function toggleLabel() {
+          if (sel.value) {
+            label.classList.add('hide-label');
+          } else {
+            label.classList.remove('hide-label');
+          }
         }
+        sel.addEventListener('change', toggleLabel);
+        toggleLabel();
+      });
+
+      // CTA "Fale connosco agora": scroll suave para #contact com offset do header
+      Array.from(document.querySelectorAll('.main-blue-button-hover a, .main-red-button-hover a')).forEach(function (el) {
+        el.addEventListener('click', function (ev) {
+          var href = el.getAttribute('href');
+          if (!href || href.charAt(0) !== '#') return; // links externos deixar intactos
+          var target = document.querySelector(href);
+          if (target) {
+            ev.preventDefault();
+            // Calcular offset do header
+            var headerHeight = document.querySelector('.header-area')?.offsetHeight || 80;
+            var targetTop = target.offsetTop - headerHeight;
+            window.scrollTo({
+              top: targetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
   <script>
     // Acc

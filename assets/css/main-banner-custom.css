@@ -1,0 +1,58 @@
+/* Centraliza verticalmente o conteúdo de texto na section 3 (about-us) */
+#about .row {
+  align-items: center;
+  display: flex;
+}
+/* Ajustes para a section 3 (about-us) */
+#about .left-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about .left-image img {
+  border-radius: 36px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* Aumenta a largura máxima do container da main-banner */
+.main-banner.snap-section .container {
+  max-width: 1800px;
+}
+/* Ajustes visuais para main-banner */
+.main-banner.snap-section {
+  min-height: 110vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-banner-image {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+.main-banner-image img {
+  border-radius: 36px !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .main-banner.snap-section {
+    min-height: 90vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .main-banner-image img {
+    max-width: 99vw;
+    border-radius: 24px !important;
+  }
+}
