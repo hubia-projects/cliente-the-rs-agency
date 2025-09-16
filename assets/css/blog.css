@@ -332,6 +332,15 @@
   list-style: none;
 }
 
+.blog-pagination a {
+  background: #fdfcf7;
+  color: #333;
+  border: 2px solid #ddd;
+  padding: 0% 15px;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
 .blog-pagination a,
 .blog-pagination span {
   width: 40px;
@@ -342,25 +351,60 @@
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+    min-width: 0;
+    word-break: break-word;
+    white-space: normal;
   transition: all 0.3s ease;
+  .blog-pagination a.prev,
+  .blog-pagination a.next {
+    font-size: 11px;
+    min-width: 28px;
+    padding: 0 2px;
+    letter-spacing: -0.5px;
+    word-break: break-word;
+    white-space: normal;
+    background: #fff !important;
+    color: #333 !important;
+    border: 2px solid #ddd !important;
+    border-radius: 6px !important;
+    box-sizing: border-box;
+  }
 }
 
 .blog-pagination a {
+}
   background: #fff;
-  color: #333;
+  color: #fae6bd;
   border: 2px solid #ddd;
 }
 
 .blog-pagination a:hover {
-  background: #ff695a;
+  background: #bbbcb1;
   color: #fff;
-  border-color: #ff695a;
 }
 
 .blog-pagination .current {
   background: #ff695a;
   color: #fff;
   border: 2px solid #ff695a;
+}
+
+/* Mobile fix for broken pagination */
+@media (max-width: 600px) {
+  .blog-pagination ul {
+    gap: 4px;
+  }
+  .blog-pagination a,
+  .blog-pagination span {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    padding: 0;
+    border-radius: 6px;
+  }
+  .blog-pagination {
+    margin-top: 24px;
+  }
 }
 
 /* Blog Post Page Styles */

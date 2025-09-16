@@ -1,6 +1,6 @@
 /* Parceiros - cards maiores, logos maiores e altura padronizada */
 .partners-carousel .partner-item {
-	min-width: 280px;
+	min-width: 250px;
 	max-width: 320px;
 	height: 360px;
 	display: flex !important;
@@ -57,7 +57,30 @@
 	.partners-carousel .partner-item p {
 		font-size: 0.98rem;
 	}
+
+	.text-lg-start {
+		margin-top: 5rem;
+	}
+
+	.row-section3 div {
+		display: block !important;
+		justify-content: center !important;
+		align-items: center !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
 }
+
+	.section-heading-3 {
+		text-align: center !important;
+	}
+
+
+
+
+	}
+
+
+
 /* Botão moderno para o formulário de contato */
 .main-button, button.main-button, #form-submit.main-button {
 	background: linear-gradient(90deg, #c2c4b8 0%, #716969 100%);
@@ -226,3 +249,5 @@ fieldset.floating label.hide-label {
 		margin-right: 0 !important;
 	}
 }
+
+
