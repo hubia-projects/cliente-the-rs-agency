@@ -24,6 +24,10 @@
   <!-- Custom CSS para scroll snap e animações -->
   <link rel="stylesheet" href="assets/css/custom.css" />
   <link rel="stylesheet" href="assets/css/main-banner-custom.css" />
+  <!-- Responsividade otimizada das seções -->
+  <link rel="stylesheet" href="assets/css/responsive-sections.css" />
+  <!-- Ajustes finais de responsividade -->
+  <link rel="stylesheet" href="assets/css/final-adjustments.css" />
   <!--
 
 TemplateMo 565 Onix Digital
@@ -109,7 +113,7 @@ https://templatemo.com/tm-565-onix-digital
           <div
             class="hero-actions d-flex flex-column flex-md-row justify-content-center justify-content-lg-start align-items-center gap-3 mt-4">
             <div class="main-blue-button-hover mb-2 mb-md-0">
-              <a href="#contact">Fale Connosco Agora</a>
+              <a href="#contact">Fale Connosco</a>
             </div>
             <a class="hero-phone" target="_blank"  href="https://wa.me/351918741460"><i class="fa fa-whatsapp"></i> +351 918 741 460</a>
           </div>
@@ -212,7 +216,7 @@ https://templatemo.com/tm-565-onix-digital
                     <div class="count-digit">+150</div>
                     <div class="count-title">Downloads - MakerWorld</div>
                     <p>
-                      Nossos Modelos Personalizados no MakerWorld, disponíveis para uso profissional e criativo.
+                      Os nossos modelos personalizados no MakerWorld, disponíveis para uso profissional e criativo.
                     </p>
                   </div>
                 </div>
@@ -416,7 +420,7 @@ https://templatemo.com/tm-565-onix-digital
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
             <h2>
-              Nossos Parceiros
+              Os Nossos Parceiros
             </h2>
           </div>
         </div>
@@ -664,6 +668,7 @@ https://templatemo.com/tm-565-onix-digital
   <script src="assets/js/imagesloaded.js" defer></script>
   <script src="assets/js/custom.js" defer></script>
   <script src="assets/js/toast.js" defer></script>
+  <script src="assets/js/responsive-navigation.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
 
@@ -693,7 +698,7 @@ https://templatemo.com/tm-565-onix-digital
         toggleLabel();
       });
 
-      // CTA "Fale connosco agora": scroll suave para #contact com offset do header
+      // CTA "Fale connosco agora": scroll suave para #contact com offset do header - OTIMIZADO
       Array.from(document.querySelectorAll('.main-blue-button-hover a, .main-red-button-hover a')).forEach(function (el) {
         el.addEventListener('click', function (ev) {
           var href = el.getAttribute('href');
@@ -701,9 +706,16 @@ https://templatemo.com/tm-565-onix-digital
           var target = document.querySelector(href);
           if (target) {
             ev.preventDefault();
-            // Calcular offset do header
+            // Calcular offset do header com margem extra para centralização
             var headerHeight = document.querySelector('.header-area')?.offsetHeight || 80;
-            var targetTop = target.offsetTop - headerHeight;
+            var extraOffset = 60; // Aumentado de 20 para 60 para melhor centralização
+            var targetTop = target.offsetTop - headerHeight - extraOffset;
+            
+            // Remover active de outros links
+            document.querySelectorAll('.scroll-to-section a').forEach(function(link) {
+              link.classList.remove('active');
+            });
+            
             window.scrollTo({
               top: targetTop,
               behavior: 'smooth'

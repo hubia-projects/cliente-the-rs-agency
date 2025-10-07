@@ -1,0 +1,844 @@
+/* ========================================
+   RESPONSIVIDADE DINÂMICA DAS SEÇÕES
+   Ajustes para altura, espaçamento e centralização
+   ======================================== */
+
+/* Reset de margens e paddings das seções */
+.section {
+    margin: 0 !important;
+    padding: 40px 0 !important; /* Reduzido de 60px para 40px */
+}
+
+/* Reduzir espaçamento entre seções - mais compacto */
+.snap-section {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Reduzir ainda mais o espaçamento a partir da segunda seção */
+#services,
+#about,
+#portfolio,
+#parceiros,
+#contact,
+#social-media {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+/* Remover espaçamentos extras que possam existir */
+.section::before,
+.section::after {
+    display: none !important;
+}
+
+/* Garantir que não haja padding/margin duplo */
+.section .container {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ========== SEÇÃO 1: BANNER PRINCIPAL ========== */
+#top.main-banner {
+    min-height: 100vh !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 100px 20px 60px 20px !important;
+}
+
+#top.main-banner .container {
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* ========== SEÇÃO 2: SERVIÇOS ========== */
+#services.our-services {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 80px 0 !important;
+}
+
+#services .services-container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#services .section-heading {
+    margin-bottom: 50px !important;
+}
+
+#services .services-grid {
+    margin-top: 0 !important;
+}
+
+/* ========== SEÇÃO 3: SOBRE NÓS ========== */
+#about.about-us {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 80px 0 !important;
+}
+
+#about .left-image,
+#about .right-image {
+    margin-bottom: 30px !important;
+}
+
+#about .section-heading {
+    margin-bottom: 40px !important;
+}
+
+#about .fact-item {
+    padding: 20px 10px !important;
+    margin-bottom: 20px !important;
+}
+
+/* ========== SEÇÃO 4: PORTFÓLIO ========== */
+#portfolio.our-portfolio {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 80px 0 !important;
+}
+
+#portfolio .section-heading {
+    margin-bottom: 50px !important;
+}
+
+/* ========== SEÇÃO 5: PARCEIROS ========== */
+#parceiros.partners-section {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 80px 0 !important;
+}
+
+#parceiros .section-heading {
+    margin-bottom: 50px !important;
+}
+
+/* ========== SEÇÃO 6: CONTATO ========== */
+#contact.contact-us {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 80px 0 !important;
+}
+
+#contact .contact-map-wrapper {
+    margin-bottom: 40px !important;
+}
+
+/* ========== SEÇÃO REDES SOCIAIS ========== */
+#social-media.social-media-section {
+    padding: 60px 0 !important;
+    margin: 0 !important;
+}
+
+/* ========== SCROLL OFFSET PARA ÂNCORAS ========== */
+.section {
+    scroll-margin-top: 100px !important;
+}
+
+/* ========================================
+   RESPONSIVO TABLET (768px - 1024px)
+   ======================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* Banner principal */
+    #top.main-banner {
+        min-height: 90vh !important;
+        padding: 120px 30px 50px 30px !important;
+    }
+    
+    /* Todas as seções */
+    .section {
+        padding: 40px 0 !important;
+    }
+    
+    /* Reduzir espaçamento entre seções */
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
+    }
+    
+    #services.our-services,
+    #about.about-us,
+    #portfolio.our-portfolio,
+    #parceiros.partners-section,
+    #contact.contact-us {
+        padding: 35px 0 !important;
+    }
+    
+    /* Seção sobre - ajustar imagem */
+    #about .left-image img {
+        max-height: 400px !important;
+        object-fit: cover !important;
+    }
+    
+    /* Facts com melhor espaçamento */
+    #about .fact-item {
+        padding: 25px 15px !important;
+    }
+    
+    /* Formulário de contato */
+    #contact .contact-form-col {
+        margin-top: 30px !important;
+    }
+}
+
+/* ========================================
+   RESPONSIVO MOBILE PEQUENO (até 576px)
+   ======================================== */
+@media (max-width: 576px) {
+    
+    /* Reduzir padding geral */
+    .section {
+        padding: 25px 0 !important;
+    }
+    
+    /* Reduzir ainda mais o espaçamento entre seções no mobile */
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    /* Banner principal */
+    #top.main-banner {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 90px 15px 30px 15px !important;
+    }
+    
+    #top.main-banner .hero-static {
+        margin-bottom: 30px !important;
+    }
+    
+    #top .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    #top .hero-eyebrow {
+        font-size: 0.9rem !important;
+    }
+    
+    #top .hero-sub {
+        font-size: 1rem !important;
+    }
+    
+    /* Serviços */
+    #services.our-services {
+        padding: 20px 0 !important;
+    }
+    
+    #services .section-heading {
+        margin-bottom: 20px !important;
+    }
+    
+    #services .section-heading h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    #services .service-item {
+        margin-bottom: 20px !important;
+        padding: 25px 20px !important;
+    }
+    
+    /* Sobre nós */
+    #about.about-us {
+        padding: 20px 0 !important;
+    }
+    
+    #about .left-image {
+        margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+    
+    #about .left-image img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    #about .section-heading h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+    }
+    
+    #about .section-heading p {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+    }
+    
+    #about .fact-item {
+        padding: 20px 10px !important;
+        text-align: center !important;
+    }
+    
+    #about .count-digit {
+        font-size: 2rem !important;
+    }
+    
+    #about .count-title {
+        font-size: 1rem !important;
+    }
+    
+    #about .fact-item p {
+        font-size: 0.85rem !important;
+    }
+    
+    /* Portfólio */
+    #portfolio.our-portfolio {
+        padding: 20px 0 !important;
+    }
+    
+    #portfolio .section-heading {
+        margin-bottom: 20px !important;
+    }
+    
+    #portfolio .section-heading h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    /* Parceiros */
+    #parceiros.partners-section {
+        padding: 20px 0 !important;
+    }
+    
+    #parceiros .section-heading {
+        margin-bottom: 20px !important;
+    }
+    
+    #parceiros .section-heading h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    /* Contato */
+    #contact.contact-us {
+        padding: 20px 0 !important;
+    }
+    
+    #contact .contact-title {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    #contact #map iframe {
+        height: 250px !important;
+    }
+    
+    #contact .contact-info {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Redes sociais */
+    #social-media.social-media-section {
+        padding: 20px 0 !important;
+    }
+    
+    #social-media .section-heading {
+        margin-bottom: 20px !important;
+    }
+    
+    #social-media .section-heading h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* ========================================
+   RESPONSIVO MOBILE MÉDIO (577px - 767px)
+   ======================================== */
+@media (min-width: 577px) and (max-width: 767px) {
+    
+    .section {
+        padding: 30px 0 !important;
+    }
+    
+    /* Reduzir espaçamento entre seções */
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+    
+    #top.main-banner {
+        min-height: 85vh !important;
+        padding: 100px 20px 40px 20px !important;
+    }
+    
+    #top .hero-title {
+        font-size: 3rem !important;
+    }
+    
+    #services.our-services,
+    #about.about-us,
+    #portfolio.our-portfolio,
+    #parceiros.partners-section,
+    #contact.contact-us {
+        padding: 25px 0 !important;
+    }
+    
+    #about .left-image {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+    }
+    
+    #contact #map iframe {
+        height: 300px !important;
+    }
+}
+
+/* ========================================
+   DESKTOP PEQUENO (768px - 991px)
+   ======================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+    #top.main-banner {
+        min-height: 90vh !important;
+        padding: 120px 30px 50px 30px !important;
+    }
+    
+    .section {
+        padding: 40px 0 !important;
+    }
+    
+    /* Reduzir espaçamento entre seções */
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
+    }
+    
+    #about .left-image img {
+        max-height: 450px !important;
+        object-fit: cover !important;
+    }
+}
+
+/* ========================================
+   DESKTOP GRANDE (992px - 1399px)
+   ======================================== */
+@media (min-width: 992px) and (max-width: 1399px) {
+    
+    #top.main-banner {
+        min-height: 95vh !important;
+        padding: 130px 40px 60px 40px !important;
+    }
+    
+    .section {
+        padding: 50px 0 !important;
+    }
+    
+    /* Reduzir espaçamento entre seções */
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+/* ========================================
+   DESKTOP EXTRA GRANDE (1400px+)
+   ======================================== */
+@media (min-width: 1400px) {
+    
+    #top.main-banner {
+        min-height: 100vh !important;
+        padding: 140px 50px 70px 50px !important;
+    }
+    
+    .section {
+        padding: 60px 0 !important;
+    }
+    
+    /* Reduzir espaçamento entre seções */
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    .container {
+        max-width: 1320px !important;
+    }
+}
+
+/* ========================================
+   AJUSTES PARA SCROLL SUAVE E ANCORAGEM
+   ======================================== */
+
+/* Offset de scroll para compensar header fixo */
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 100px !important;
+}
+
+/* Garantir que as seções ocupem espaço adequado */
+.snap-section {
+    position: relative !important;
+    width: 100% !important;
+}
+
+/* Centralizar conteúdo ao navegar por âncoras */
+.section:target {
+    scroll-margin-top: 120px !important;
+}
+
+/* ========================================
+   AJUSTES ESPECÍFICOS PARA ELEMENTOS
+   ======================================== */
+
+/* Garantir que imagens não quebrem o layout */
+.section img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Espaçamento consistente para headings - REDUZIDO */
+.section-heading {
+    margin-bottom: 30px !important;
+    margin-top: 0 !important;
+}
+
+.section-heading h2 {
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+}
+
+.section-heading p {
+    margin-bottom: 10px !important;
+}
+
+/* Reduzir margem dos headings em mobile */
+@media (max-width: 767px) {
+    .section-heading {
+        margin-bottom: 20px !important;
+    }
+    
+    .section-heading h2 {
+        margin-bottom: 10px !important;
+    }
+}
+
+/* Ajustar botões para mobile */
+@media (max-width: 767px) {
+    .main-blue-button-hover a,
+    .main-red-button-hover a,
+    .main-button {
+        width: 100% !important;
+        max-width: 300px !important;
+        text-align: center !important;
+        display: inline-block !important;
+    }
+    
+    .hero-actions {
+        width: 100% !important;
+    }
+    
+    .hero-phone {
+        width: 100% !important;
+        max-width: 300px !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* ========================================
+   OTIMIZAÇÕES DE PERFORMANCE
+   ======================================== */
+
+/* Prevenir reflow desnecessário */
+* {
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+}
+
+/* Otimizar transições */
+.section {
+    will-change: auto !important;
+}
+
+/* ========================================
+   FIX PARA CORTE DE CONTEÚDO
+   ======================================== */
+
+/* Garantir que nenhum conteúdo seja cortado */
+.section .container {
+    overflow: visible !important;
+}
+
+.section .row {
+    overflow: visible !important;
+}
+
+/* Garantir altura mínima adequada para todo o conteúdo */
+.section {
+    min-height: fit-content !important;
+    overflow: visible !important;
+}
+
+/* ========================================
+   AJUSTE FINAL DE ESPAÇAMENTOS
+   ======================================== */
+
+/* Remover espaços desnecessários entre seções */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+main {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Garantir fluxo natural do conteúdo */
+.section + .section {
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+}
+
+@media (max-width: 767px) {
+    .section + .section {
+        padding-top: 40px !important;
+    }
+}
+
+/* ========================================
+   AJUSTES ADICIONAIS PARA EVITAR CORTES
+   ======================================== */
+
+/* Garantir que containers não escondam conteúdo */
+.container,
+.container-fluid {
+    overflow: visible !important;
+}
+
+/* Seção de serviços - garantir espaço para os cards */
+#services .services-grid {
+    min-height: fit-content !important;
+}
+
+#services .service-item {
+    min-height: 300px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+@media (max-width: 767px) {
+    #services .service-item {
+        min-height: 250px !important;
+    }
+}
+
+/* Seção about - garantir visibilidade dos facts */
+#about .row.align-items-start {
+    min-height: fit-content !important;
+}
+
+#about .fact-item {
+    min-height: 280px !important;
+}
+
+@media (max-width: 767px) {
+    #about .fact-item {
+        min-height: 220px !important;
+    }
+}
+
+/* Owl carousel - garantir altura adequada */
+.owl-carousel {
+    min-height: fit-content !important;
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow: visible !important;
+}
+
+/* Parceiros - garantir que os cards sejam visíveis */
+.partners-carousel {
+    padding: 20px 0 !important;
+}
+
+.partner-item {
+    overflow: visible !important;
+}
+
+/* Formulário de contato - melhor espaçamento */
+#contact-form fieldset {
+    margin-bottom: 20px !important;
+}
+
+#contact .contact-form-col {
+    padding: 30px !important;
+}
+
+/* ========================================
+   ELEMENTOS DECORATIVOS - AJUSTES
+   ======================================== */
+
+/* Neutralizar elementos decorativos que causam espaçamento extra */
+.services-right-dec,
+.services-left-dec,
+.portfolio-left-dec,
+.footer-dec {
+    position: absolute !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Garantir que elementos decorativos não afetem o layout */
+.services-right-dec img,
+.services-left-dec img,
+.portfolio-left-dec img,
+.footer-dec img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* ========================================
+   SEÇÃO SUBSCRIBE/NEWSLETTER
+   ======================================== */
+
+/* Reduzir espaçamento da seção de newsletter */
+#subscribe.subscribe {
+    padding: 50px 0 !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 767px) {
+    #subscribe.subscribe {
+        padding: 30px 0 !important;
+    }
+}
+
+/* Footer - reduzir espaçamento */
+footer {
+    padding: 40px 0 20px 0 !important;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 767px) {
+    footer {
+        padding: 30px 0 15px 0 !important;
+    }
+}
+
+/* ========================================
+   OVERRIDE DE ESPAÇAMENTOS PROBLEMÁTICOS
+   ======================================== */
+
+/* Forçar remoção de margens excessivas que possam existir no template original */
+.our-services,
+.about-us,
+.our-portfolio,
+.contact-us,
+.partners-section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Remover padding-top/bottom extras do template original */
+.our-services .container,
+.about-us .container,
+.our-portfolio .container-fluid,
+.contact-us .container,
+.partners-section .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Garantir que rows não adicionem espaçamento extra */
+.section .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.section .row > [class*="col-"] {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* ========================================
+   AJUSTES PARA HEADER STICKY
+   ======================================== */
+
+/* Garantir que o header não afete o layout das seções */
+.header-area {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+}
+
+/* Compensar altura do header fixo */
+body {
+    padding-top: 0 !important;
+}
+
+/* Primeira seção precisa considerar o header */
+#top.main-banner {
+    padding-top: 100px !important;
+}
+
+@media (max-width: 767px) {
+    #top.main-banner {
+        padding-top: 90px !important;
+    }
+}
+
+/* ========================================
+   AJUSTES PARA NAVEGAÇÃO ÂNCORA
+   ======================================== */
+
+/* Melhorar a centralização ao clicar em links de âncora */
+#top:target,
+#services:target,
+#about:target,
+#portfolio:target,
+#parceiros:target,
+#contact:target {
+    scroll-margin-top: 100px !important;
+}
+
+@media (max-width: 767px) {
+    #top:target,
+    #services:target,
+    #about:target,
+    #portfolio:target,
+    #parceiros:target,
+    #contact:target {
+        scroll-margin-top: 80px !important;
+    }
+}

@@ -1,0 +1,650 @@
+/* ========================================
+   AJUSTES FINAIS DE RESPONSIVIDADE
+   Correções específicas para elementos problemáticos
+   ======================================== */
+
+/* ========== SEÇÃO BANNER - AJUSTES FINOS ========== */
+
+/* REDUZIR MARGEM BOTTOM DO BANNER para as outras seções subirem MUITO mais */
+#top.main-banner {
+    margin-bottom: 0 !important;
+    padding-bottom: 0px !important;
+}
+
+/* Forçar seções seguintes a subirem MUITO mais - aumentado significativamente */
+#services,
+#about,
+#portfolio,
+#parceiros,
+#contact,
+#social-media {
+    margin-top: 0px !important; /* Aumentado para subir mais */
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    #top.main-banner {
+        padding-bottom:30px !important;
+    }
+    
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        margin-top: 0px !important; /* Aumentado para subir muito mais */
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    #top.main-banner {
+        padding-bottom: 25px !important;
+    }
+    
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        margin-top: -15px !important; /* Aumentado para subir mais */
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    #top.main-banner {
+        padding-bottom: 15px !important;
+    }
+    
+    #services,
+    #about,
+    #portfolio,
+    #parceiros,
+    #contact,
+    #social-media {
+        margin-top: 0px !important; /* Aumentado para subir mais */
+    }
+}
+
+/* Garantir que a imagem do banner não quebre */
+.main-banner-image img {
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Garantir que o texto do banner seja legível em todas as telas */
+.hero-static {
+    z-index: 10 !important;
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-eyebrow {
+        font-size: 0.85rem !important;
+    }
+    
+    .hero-sub {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .hero-phone {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ========== SEÇÃO SERVIÇOS - CARDS UNIFORMES ========== */
+
+.service-item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.service-item h4 {
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+}
+
+.service-item p {
+    flex-grow: 1 !important;
+}
+
+/* ========== CENTRALIZAR TÍTULOS DE TODAS AS SEÇÕES ========== */
+
+/* Centralizar títulos principais */
+.section-heading,
+.section-heading-3 {
+    text-align: center !important;
+}
+
+.section-heading h2,
+.section-heading-3 h2 {
+    text-align: center !important;
+}
+
+.section-heading p,
+.section-heading-3 p {
+    text-align: center !important;
+}
+
+/* Título do formulário de contato */
+.contact-title {
+    text-align: center !important;
+}
+
+/* ========== SEÇÃO SOBRE - FACTS GRID ========== */
+
+#about .fact-item .icon {
+    margin-bottom: 15px !important;
+}
+
+#about .fact-item .icon img {
+    max-width: 80px !important;
+    height: auto !important;
+}
+
+#about .count-digit {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+}
+
+#about .count-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+
+@media (max-width: 767px) {
+    #about .fact-item .icon img {
+        max-width: 60px !important;
+    }
+    
+    #about .count-digit {
+        font-size: 2rem !important;
+    }
+    
+    #about .count-title {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* ========== SEÇÃO PORTFÓLIO - CAROUSEL ========== */
+
+.owl-portfolio .item {
+    margin-bottom: 0 !important;
+}
+
+.owl-portfolio .thumb {
+    overflow: hidden !important;
+    border-radius: 15px !important;
+    position: relative !important;
+}
+
+.owl-portfolio .thumb img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* CORREÇÃO: Overlay laranja aparece APENAS no hover (comportamento original) */
+.our-portfolio .item .hover-effect {
+    transition: all 0.5s ease !important;
+}
+
+.our-portfolio .item .thumb:hover img {
+    opacity: 0.7 !important;
+}
+
+/* Garantir que o overlay seja visível em mobile */
+@media (max-width: 767px) {
+    .our-portfolio .item .hover-effect {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 200px !important;
+        height: 180px !important;
+        background-size: contain !important;
+    }
+    
+    .our-portfolio .item .hover-effect .inner-content {
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+    
+    .our-portfolio .item .hover-effect .inner-content h4 {
+        font-size: 16px !important;
+    }
+    
+    .our-portfolio .item .hover-effect .inner-content span {
+        font-size: 13px !important;
+    }
+}
+
+/* ========== SEÇÃO PARCEIROS - CARDS ========== */
+
+.partner-item {
+    transition: transform 0.3s ease !important;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px) !important;
+}
+
+.partner-item .icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ========== SEÇÃO CONTATO - FORMULÁRIO COM FLOATING LABELS ========== */
+
+/* Fieldset com floating label */
+#contact-form fieldset.floating {
+    position: relative !important;
+    margin-bottom: 25px !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Inputs e textarea */
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    width: 100% !important;
+    border-radius: 8px !important;
+    border: 2px solid #ddd !important;
+    padding: 18px 15px 8px 15px !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    background: #fff !important;
+}
+
+/* Focus nos inputs */
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+    border-color: #716969 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(113, 105, 105, 0.1) !important;
+}
+
+/* Labels flutuantes */
+#contact-form fieldset.floating label {
+    position: absolute !important;
+    top: 50% !important;
+    left: 15px !important;
+    transform: translateY(-50%) !important;
+    background: #fff !important;
+    padding: 0 8px !important;
+    color: #666 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+}
+
+/* Label quando input tem foco ou conteúdo */
+#contact-form input:focus ~ label,
+#contact-form input:not(:placeholder-shown) ~ label,
+#contact-form textarea:focus ~ label,
+#contact-form textarea:not(:placeholder-shown) ~ label,
+#contact-form select:focus ~ label,
+#contact-form select:not([value=""]) ~ label {
+    top: 0 !important;
+    left: 12px !important;
+    transform: translateY(-50%) scale(0.85) !important;
+    color: #716969 !important;
+    font-weight: 600 !important;
+}
+
+/* Ajustes especiais para textarea */
+#contact-form fieldset.floating:has(textarea) label {
+    top: 30px !important;
+}
+
+#contact-form textarea:focus ~ label,
+#contact-form textarea:not(:placeholder-shown) ~ label {
+    top: 0 !important;
+}
+
+/* Map do Google */
+#contact #map iframe {
+    border-radius: 15px !important;
+    width: 100% !important;
+}
+
+/* Informações de contato - ALINHADAS AO CENTRO */
+.contact-info {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 15px 0 !important;
+    font-size: 1.1rem !important;
+    gap: 10px !important;
+}
+
+.contact-info i {
+    font-size: 1.3rem !important;
+    color: white !important;
+
+}
+
+.contact-info a {
+    color: #333 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.contact-info a:hover {
+    color: #716969 !important;
+}
+
+/* Container das informações de contato - LADO A LADO */
+#contact .info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    margin-top: 10px !important;
+    flex-wrap: wrap !important;
+}
+
+@media (max-width: 767px) {
+    .contact-map-wrapper {
+        margin-bottom: 30px !important;
+    }
+    
+    #contact #map iframe {
+        height: 250px !important;
+    }
+    
+    .contact-info {
+        font-size: 1rem !important;
+    }
+}
+
+/* ========== SEÇÃO REDES SOCIAIS ========== */
+
+.social-icons-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
+
+.social-icon {
+    flex: 0 0 auto !important;
+}
+
+@media (max-width: 576px) {
+    .social-icons-wrapper {
+        gap: 15px !important;
+    }
+}
+
+/* ========== NEWSLETTER / SUBSCRIBE - ESTILO MODERNO ========== */
+
+#subscribe .inner-content {
+    padding: 40px 20px !important;
+}
+
+/* Inputs da newsletter com estilo similar ao formulário de contato */
+#subscribe-form input,
+.subscribe-newsletters input {
+    width: 100% !important;
+    border-radius: 8px !important;
+    border: 2px solid #d8d2d250 !important;
+    padding: 15px 20px !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    background: #fff !important;
+    margin-bottom: 15px !important;
+}
+
+#subscribe-form input:focus,
+.subscribe-newsletters input:focus {
+    border-color: #716969 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(122, 118, 118, 0.1) !important;
+}
+
+#subscribe-form input::placeholder,
+.subscribe-newsletters input::placeholder {
+    color: #999 !important;
+    font-size: 0.95rem !important;
+}
+
+/* Botão de subscrever */
+#subscribe-form .main-button,
+#subscribe-form button[type="submit"] {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 10px auto 0 auto !important;
+    display: block !important;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+}
+
+/* Newsletter no footer */
+.subscribe-newsletters form {
+    position: relative !important;
+}
+
+.subscribe-newsletters input {
+    padding-right: 60px !important;
+    margin-bottom: 0px !important;
+}
+
+.subscribe-newsletters button {
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    transition: all 0.3s ease !important;
+    background-color: #716969 !important;
+}
+
+.subscribe-newsletters button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+@media (min-width: 768px) {
+    #subscribe-form {
+        display: flex !important;
+        gap: 10px !important;
+        align-items: center !important;
+
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    
+    #subscribe-form input {
+        flex: 1 !important;
+        max-width: 250px !important;
+        height: 55px !important;
+
+        margin-left: 22px !important;
+    }
+    
+    #subscribe-form .main-button {
+        width: auto !important;
+        margin: 0 !important;
+
+
+        flex-shrink: 0 !important;
+    }
+}
+
+/* ========== FOOTER ========== */
+
+footer .row {
+    row-gap: 30px !important;
+}
+
+footer .footer-item {
+    margin-bottom: 20px !important;
+}
+
+footer ul {
+    padding-left: 0 !important;
+}
+
+@media (max-width: 991px) {
+    footer .footer-item {
+        text-align: center !important;
+    }
+    
+    footer ul {
+        justify-content: center !important;
+    }
+}
+
+/* ========== PRELOADER ========== */
+
+#js-preloader {
+    z-index: 99999 !important;
+}
+
+/* ========== SMOOTH SCROLL BEHAVIOR ========== */
+
+html.smooth-scroll-enabled {
+    scroll-behavior: smooth !important;
+}
+
+/* ========== MENU HEADER - REMOVER BORDA VERDE ========== */
+
+/* Remover qualquer borda dos itens do menu */
+.header-area .main-nav .nav li,
+.header-area .main-nav .nav li a,
+.scroll-to-section,
+.scroll-to-section a {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remover borda verde do link ativo */
+.header-area .main-nav .nav li a.active,
+.header-area .main-nav .nav li a:focus,
+.header-area .main-nav .nav li a:hover {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Estilo do link ativo - sem borda */
+.main-nav .nav a.active {
+    color: #716969 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* ========== ACESSIBILIDADE ========== */
+
+/* Melhorar foco visível para navegação por teclado - EXCETO MENU */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #716969 !important;
+    outline-offset: 2px !important;
+}
+
+/* Remover outline dos links do menu */
+.header-area .main-nav .nav a:focus {
+    outline: none !important;
+}
+
+/* ========== PERFORMANCE ========== */
+
+/* Otimizar renderização de imagens */
+img {
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+}
+
+/* Otimizar transições */
+* {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* ========== CORREÇÕES ESPECÍFICAS ========== */
+
+/* Garantir que elementos decorativos não interfiram */
+.services-right-dec,
+.services-left-dec,
+.portfolio-left-dec {
+    display: none !important; /* Ocultar se causar problemas */
+}
+
+/* Alternativa: Manter visível mas sem afetar layout */
+/*
+.services-right-dec,
+.services-left-dec,
+.portfolio-left-dec {
+    position: absolute !important;
+    z-index: -1 !important;
+    opacity: 0.3 !important;
+}
+*/
+
+/* ========== AJUSTES PARA ORIENTAÇÃO ========== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Ajustes para dispositivos em paisagem com pouca altura */
+    #top.main-banner {
+        min-height: auto !important;
+        padding: 80px 20px 40px 20px !important;
+    }
+    
+    .section {
+        padding: 40px 0 !important;
+    }
+}
+
+/* ========== IMPRESSÃO ========== */
+
+@media print {
+    .header-area,
+    #js-preloader,
+    .scroll-to-section,
+    #subscribe {
+        display: none !important;
+    }
+    
+    .section {
+        page-break-inside: avoid !important;
+    }
+}
+
+/* ========== DARK MODE SUPPORT (OPCIONAL) ========== */
+
+@media (prefers-color-scheme: dark) {
+    /* Adicionar suporte a dark mode se necessário */
+    /* Descomente e ajuste conforme necessário */
+    /*
+    body {
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+    */
+}
+
+/* ========== REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

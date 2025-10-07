@@ -127,7 +127,7 @@
     }
   });
 
-  // Scroll suave para âncoras com offset do header
+  // Scroll suave para âncoras com offset do header - OTIMIZADO
   $('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function(e) {
     var href = $(this).attr('href');
     if (!href || href.charAt(0) !== '#') return; // links externos deixar intactos
@@ -141,13 +141,18 @@
         closeMenu();
       }
       
-      // Calcular offset do header
+      // Calcular offset do header dinamicamente
       var headerHeight = $('.header-area').outerHeight() || 80;
-      var targetTop = target.offset().top - headerHeight;
+      var extraOffset = 60; // Aumentado de 20 para 60 para melhor centralização
+      var targetTop = target.offset().top - headerHeight - extraOffset;
+      
+      // Remover classe active de todos os links
+      $('.scroll-to-section a').removeClass('active');
+      $(this).addClass('active');
       
       $('html, body').animate({
         scrollTop: targetTop
-      }, 700);
+      }, 800, 'swing');
     }
   });
 

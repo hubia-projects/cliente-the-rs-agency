@@ -20,11 +20,9 @@
 .main-banner.snap-section .container {
   max-width: 1800px;
 }
-/* Ajustes visuais para main-banner */
+/* Ajustes visuais para main-banner - OTIMIZADO */
 .main-banner.snap-section {
-  min-height: 110vh;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  /* min-height gerenciado por responsive-sections.css */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,11 +44,7 @@
 }
 
 @media (max-width: 991px) {
-  .main-banner.snap-section {
-    min-height: 90vh;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+  /* min-height e padding gerenciados por responsive-sections.css */
   .main-banner-image img {
     max-width: 99vw;
     border-radius: 24px !important;
