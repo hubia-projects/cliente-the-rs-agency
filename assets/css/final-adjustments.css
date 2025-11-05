@@ -189,11 +189,19 @@
     overflow: hidden !important;
     border-radius: 15px !important;
     position: relative !important;
+    width: 100% !important;
+    height: 500px !important; /* Altura fixa para todas as imagens e vídeos */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #f5f5f5 !important;
 }
 
-.owl-portfolio .thumb img {
+.owl-portfolio .thumb img,
+.owl-portfolio .thumb video {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Mantém proporção e preenche o container */
     display: block !important;
 }
 
@@ -208,6 +216,10 @@
 
 /* Garantir que o overlay seja visível em mobile */
 @media (max-width: 767px) {
+    .owl-portfolio .thumb {
+        height: 300px !important; /* Altura menor em mobile */
+    }
+    
     .our-portfolio .item .hover-effect {
         bottom: 20px !important;
         right: 20px !important;
@@ -227,6 +239,203 @@
     
     .our-portfolio .item .hover-effect .inner-content span {
         font-size: 13px !important;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .owl-portfolio .thumb {
+        height: 400px !important;
+    }
+}
+
+/* ========== MODAL/LIGHTBOX PORTFÓLIO ========== */
+
+.portfolio-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    overflow: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.portfolio-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.portfolio-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.portfolio-modal-content img,
+.portfolio-modal-content video {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos melhorados para o player de vídeo */
+.portfolio-modal-content video {
+    background-color: #000;
+}
+
+/* Garantir que os controles do vídeo sejam sempre visíveis */
+.portfolio-modal-content video::-webkit-media-controls-panel {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)) !important;
+}
+
+.portfolio-modal-content video::-webkit-media-controls-timeline {
+    cursor: pointer !important;
+}
+
+/* Firefox */
+.portfolio-modal-content video::-moz-media-controls {
+    opacity: 1 !important;
+}
+
+.portfolio-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.portfolio-modal-close:hover,
+.portfolio-modal-close:focus {
+    background: rgba(255, 90, 68, 0.9);
+    transform: rotate(90deg);
+}
+
+.portfolio-modal-info {
+    position: absolute;
+    bottom: 60px; /* Espaço para os controles do vídeo */
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 30px 20px 20px;
+    border-radius: 0 0 10px 10px;
+    pointer-events: none; /* Permite clicar através da div */
+}
+
+/* Informações no topo para vídeos */
+.portfolio-modal-info-top {
+    position: absolute;
+    top: 60px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px 20px 30px;
+    border-radius: 10px 10px 0 0;
+    pointer-events: none;
+}
+
+.portfolio-modal-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.portfolio-modal-info span {
+    font-size: 16px;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* Cursor pointer nos itens do portfólio */
+.owl-portfolio .thumb {
+    cursor: pointer;
+}
+
+.owl-portfolio .thumb img,
+.owl-portfolio .thumb video {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.owl-portfolio .thumb:hover img,
+.owl-portfolio .thumb:hover video {
+    transform: scale(1.05);
+}
+
+/* Ícone de Play para vídeos no carousel */
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    z-index: 10;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.owl-portfolio .thumb:hover .video-play-icon {
+    color: rgba(255, 90, 68, 0.95);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .portfolio-modal-content {
+        max-width: 95%;
+    }
+    
+    .portfolio-modal-close {
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .portfolio-modal-info h4 {
+        font-size: 18px;
+    }
+    
+    .portfolio-modal-info span {
+        font-size: 14px;
     }
 }
 
