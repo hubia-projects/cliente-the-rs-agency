@@ -822,28 +822,78 @@ https://templatemo.com/tm-565-onix-digital
 
       // Função para verificar se os vídeos carregam corretamente
       function checkVideoLoading() {
-        document.querySelectorAll('.owl-portfolio video[data-video-fallback="true"]').forEach(function(video) {
+        document.querySelectorAll('.owl-portfolio video[data-video-fallback="true"]').forEach(function(video, index) {
+          const source = video.querySelector('source');
+          const videoSrc = source ? source.src : '';
+          
+          console.log('🎬 Inicializando vídeo ' + (index + 1) + ':', videoSrc);
+          
+          // Event: Vídeo carregou com sucesso
+          video.addEventListener('loadedmetadata', function() {
+            console.log('✅ Vídeo ' + (index + 1) + ' - Metadata carregada');
+            video.setAttribute('data-loaded', 'true');
+            video.style.backgroundColor = 'transparent';
+          });
+          
           video.addEventListener('loadeddata', function() {
+            console.log('✅ Vídeo ' + (index + 1) + ' - Data carregada');
             video.setAttribute('data-loaded', 'true');
           });
           
-          video.addEventListener('error', function() {
-            console.warn('Vídeo não pôde ser carregado:', video.querySelector('source').src);
+          video.addEventListener('canplay', function() {
+            console.log('✅ Vídeo ' + (index + 1) + ' - Pronto para reproduzir');
+            video.setAttribute('data-loaded', 'true');
+          });
+          
+          // Event: Erro ao carregar vídeo
+          video.addEventListener('error', function(e) {
+            console.error('❌ Vídeo ' + (index + 1) + ' - Erro:', e);
+            console.error('❌ Código de erro:', video.error ? video.error.code : 'unknown');
+            console.error('❌ Mensagem:', video.error ? video.error.message : 'unknown');
             video.setAttribute('data-loaded', 'false');
-            // Mostrar fallback text
+            
+            // Mostrar fallback
             const fallbackText = video.querySelector('p');
             if (fallbackText) {
               fallbackText.style.display = 'block';
             }
+            
+            // Tentar recarregar o vídeo uma vez
+            if (!video.hasAttribute('data-retry')) {
+              video.setAttribute('data-retry', 'true');
+              console.warn('⚠️ Tentando recarregar vídeo ' + (index + 1) + '...');
+              setTimeout(function() {
+                video.load();
+              }, 1000);
+            }
+          });
+          
+          source.addEventListener('error', function(e) {
+            console.error('❌ Source erro para vídeo ' + (index + 1) + ':', videoSrc);
           });
 
-          // Timeout para detectar vídeos que não carregam
+          // Timeout para detectar vídeos que não carregam (aumentado para 10s)
           setTimeout(function() {
-            if (!video.hasAttribute('data-loaded')) {
+            if (!video.hasAttribute('data-loaded') || video.getAttribute('data-loaded') === 'false') {
+              console.warn('⏱️ Timeout: Vídeo ' + (index + 1) + ' não carregou:', videoSrc);
               video.setAttribute('data-loaded', 'false');
-              console.warn('Timeout: Vídeo não carregou dentro do tempo esperado:', video.querySelector('source').src);
+              
+              // Verificar se o arquivo existe
+              fetch(videoSrc, { method: 'HEAD' })
+                .then(function(response) {
+                  if (response.ok) {
+                    console.log('✅ Arquivo existe, mas não carregou no player:', videoSrc);
+                    console.log('📊 Status:', response.status);
+                    console.log('📊 Content-Type:', response.headers.get('content-type'));
+                  } else {
+                    console.error('❌ Arquivo não encontrado (404):', videoSrc);
+                  }
+                })
+                .catch(function(error) {
+                  console.error('❌ Erro ao verificar arquivo:', error);
+                });
             }
-          }, 5000); // 5 segundos timeout
+          }, 10000); // 10 segundos timeout
         });
       }
 
