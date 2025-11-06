@@ -498,6 +498,22 @@ html {
     scroll-padding-top: 100px !important;
 }
 
+/* DESABILITAR SCROLL SNAP NO MOBILE PARA SCROLL FLUIDO */
+@media (max-width: 991px) {
+    html {
+        scroll-snap-type: none !important;
+    }
+    
+    body {
+        scroll-snap-type: none !important;
+    }
+    
+    .snap-section {
+        scroll-snap-align: none !important;
+        scroll-snap-stop: normal !important;
+    }
+}
+
 /* Garantir que as seções ocupem espaço adequado */
 .snap-section {
     position: relative !important;

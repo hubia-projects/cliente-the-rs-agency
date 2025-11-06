@@ -327,8 +327,8 @@ https://templatemo.com/tm-565-onix-digital
           </div>
         </div>
         
-        <!-- Vídeo 2 - Apresentação Pavilhões (TEMPORARIAMENTE DESABILITADO - ARQUIVO MUITO GRANDE) -->
-        <!-- <div class="item">
+        <!-- Vídeo 2 - Apresentação Pavilhões -->
+        <div class="item">
           <div class="thumb">
             <video preload="metadata" muted playsinline controls="false" poster="" data-video-fallback="true">
               <source src="assets/images/novas-midias/ovarense-apresentacao-pavilhoes.mp4" type="video/mp4" />
@@ -337,21 +337,6 @@ https://templatemo.com/tm-565-onix-digital
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
             </div>
-            <div class="hover-effect">
-              <div class="inner-content">
-                <a href="#">
-                  <h4>Ovarense Basquetebol</h4>
-                </a>
-                <span>Apresentação Pavilhões</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        
-        <!-- PLACEHOLDER: Imagem temporária até vídeo ser comprimido -->
-        <div class="item">
-          <div class="thumb">
-            <img src="assets/images/novas-midias/Logo Ovarense Basquetebol.png" alt="Ovarense Basquetebol" loading="lazy" />
             <div class="hover-effect">
               <div class="inner-content">
                 <a href="#">
@@ -747,13 +732,39 @@ https://templatemo.com/tm-565-onix-digital
   <script>
     // Inicialização AOS e configurações básicas
     document.addEventListener('DOMContentLoaded', function () {
+      // Detectar mobile e desabilitar scroll snap para scroll fluido
+      const isMobile = window.innerWidth <= 991 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        document.body.classList.add('no-snap');
+        console.log('📱 Mobile detectado: Scroll snap desabilitado para scroll fluido');
+      }
+      
       // Prefers-reduced-motion
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReducedMotion) {
         document.body.classList.add('no-snap');
         AOS.init({ disable: true, once: true });
       } else {
-        AOS.init({ once: true, duration: 700, easing: 'ease-out-quart', offset: 120, anchorPlacement: 'top-bottom' });
+        // Configurar AOS com animações mais leves no mobile
+        if (isMobile) {
+          AOS.init({ 
+            once: true, 
+            duration: 400,  // Mais rápido no mobile
+            easing: 'ease-out-cubic', 
+            offset: 50,  // Offset menor no mobile
+            anchorPlacement: 'top-bottom',
+            disable: false
+          });
+        } else {
+          AOS.init({ 
+            once: true, 
+            duration: 700, 
+            easing: 'ease-out-quart', 
+            offset: 120, 
+            anchorPlacement: 'top-bottom' 
+          });
+        }
       }
 
       // Floating label helper para <select>
