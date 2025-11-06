@@ -205,6 +205,43 @@
     display: block !important;
 }
 
+/* Fallback para vídeos que não carregam */
+.owl-portfolio .thumb video[data-video-fallback="true"]:not([data-loaded="true"]) {
+    background-image: linear-gradient(135deg, #ff5a44, #ff9068);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.owl-portfolio .thumb video[data-video-fallback="true"]:not([data-loaded="true"])::before {
+    content: "🎬";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+
+/* Fallback text para navegadores sem suporte */
+.owl-portfolio .thumb video p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.owl-portfolio .thumb video:not([data-loaded="true"]) p {
+    display: block;
+}
+
 /* CORREÇÃO: Overlay laranja aparece APENAS no hover (comportamento original) */
 .our-portfolio .item .hover-effect {
     transition: all 0.5s ease !important;
@@ -1360,5 +1397,80 @@ img {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* ========== PARCEIRO ÚNICO CENTRALIZADO ========== */
+
+.partners-carousel .item.partner-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    background: white !important;
+    border-radius: 15px !important;
+    padding: 30px 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    max-width: 300px !important;
+}
+
+.partners-carousel .item.partner-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.partners-carousel .item.partner-item .icon {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+    background: transparent !important;
+}
+
+.partners-carousel .item.partner-item .icon img {
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transition: none !important;
+    background: transparent !important;
+}
+
+.partners-carousel .item.partner-item p {
+    text-align: center !important;
+    font-weight: 600 !important;
+    color: #2a2a2a !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+}
+
+/* Centralizar o owl-carousel quando há apenas um item */
+.owl-carousel.partners-carousel .owl-stage-outer {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.owl-carousel.partners-carousel .owl-stage {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Responsividade para parceiro único */
+@media (max-width: 768px) {
+    .partners-carousel .item.partner-item {
+        max-width: 280px !important;
+        padding: 25px 15px !important;
+    }
+    
+    .partners-carousel .item.partner-item .icon img {
+        max-width: 200px !important;
+    }
+    
+    .partners-carousel .item.partner-item p {
+        font-size: 14px !important;
     }
 }

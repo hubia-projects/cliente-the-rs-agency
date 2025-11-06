@@ -264,9 +264,9 @@ https://templatemo.com/tm-565-onix-digital
         <!-- Vídeo 1 - Behind the Scenes -->
         <div class="item">
           <div class="thumb">
-            <video preload="metadata" muted playsinline>
+            <video preload="metadata" muted playsinline controls="false" poster="" data-video-fallback="true">
               <source src="assets/images/novas-midias/Behind the scenes_1.mp4" type="video/mp4" />
-              O seu navegador não suporta vídeos.
+              <p>O seu navegador não suporta vídeos HTML5. <a href="assets/images/novas-midias/Behind the scenes_1.mp4" target="_blank">Clique aqui para baixar o vídeo</a>.</p>
             </video>
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
@@ -330,9 +330,9 @@ https://templatemo.com/tm-565-onix-digital
         <!-- Vídeo 2 - Apresentação Pavilhões -->
         <div class="item">
           <div class="thumb">
-            <video preload="metadata" muted playsinline>
+            <video preload="metadata" muted playsinline controls="false" poster="" data-video-fallback="true">
               <source src="assets/images/novas-midias/Ovarense_Apresentação Pavilhões.mp4" type="video/mp4" />
-              O seu navegador não suporta vídeos.
+              <p>O seu navegador não suporta vídeos HTML5. <a href="assets/images/novas-midias/Ovarense_Apresentação Pavilhões.mp4" target="_blank">Clique aqui para baixar o vídeo</a>.</p>
             </video>
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
@@ -435,7 +435,7 @@ https://templatemo.com/tm-565-onix-digital
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading">
             <h2>
-              Os Nossos Parceiros
+              O Nosso Parceiro
             </h2>
           </div>
         </div>
@@ -445,29 +445,10 @@ https://templatemo.com/tm-565-onix-digital
           <div class="owl-carousel owl-services partners-carousel" data-aos="fade-up" data-aos-delay="100">
             <div class="item partner-item">
               <div class="icon">
-                <img src="assets/images/parceiros-icon-01.png" alt="Logo parceiro 1" loading="lazy" />
+                <img src="assets/images/parceiros-icon-01.png" alt="Ovarense Basquetebol" loading="lazy" />
               </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Ovarense Basquetebol </p>
+              <p style="border: none; border-bottom: none; margin-top: 0;">Ovarense Basquetebol</p>
             </div>
-            <div class="item partner-item">
-              <div class="icon">
-                <img src="assets/images/parceiros-icon-02.png" alt="Logo parceiro 2" loading="lazy" />
-              </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Associação Desportiva Sanjoanense.</p>
-            </div>
-            <div class="item partner-item">
-              <div class="icon">
-                <img src="assets/images/parceiros-icon-03.png" alt="Logo parceiro 3" loading="lazy" />
-              </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">Associação Desportiva Ovarense</p>
-            </div>
-            <div class="item partner-item">
-              <div class="icon">
-                <img src="assets/images/parceiros-icon-04.png" alt="Logo parceiro 4" loading="lazy" />
-              </div>
-              <p style="border: none; border-bottom: none; margin-top: 0;">CP Esgueira Basket</p>
-            </div>
-
           </div>
         </div>
       </div>
@@ -627,6 +608,12 @@ https://templatemo.com/tm-565-onix-digital
               <li>
                 <a href="https://instagram.com/thersagency" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
               </li>
+              <li>
+                <a href="https://youtube.com/@TheRS.Agency" target="_blank" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+              </li>
+              <li>
+                <a href="https://tiktok.com/@thersagency" target="_blank" title="TikTok"><i class="fa fa-music"></i></a>
+              </li>
             </ul>
           </div>
         </div>
@@ -699,6 +686,47 @@ https://templatemo.com/tm-565-onix-digital
   <script src="assets/js/toast.js" defer></script>
   <script src="assets/js/responsive-navigation.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+  <!-- Script adicional para debug de vídeos -->
+  <script>
+    // Debug para problemas de vídeo em produção
+    function debugVideoIssues() {
+      console.log('🎬 Iniciando debug de vídeos...');
+      
+      const videos = document.querySelectorAll('.owl-portfolio video');
+      console.log(`📹 Encontrados ${videos.length} vídeos no portfólio`);
+      
+      videos.forEach((video, index) => {
+        const source = video.querySelector('source');
+        const src = source ? source.src : 'sem source';
+        
+        console.log(`📹 Vídeo ${index + 1}:`, {
+          src: src,
+          readyState: video.readyState,
+          networkState: video.networkState,
+          error: video.error
+        });
+        
+        // Testar se o arquivo existe
+        if (source) {
+          fetch(source.src, { method: 'HEAD' })
+            .then(response => {
+              console.log(`✅ Vídeo ${index + 1} - Status HTTP:`, response.status);
+              console.log(`📊 Content-Type:`, response.headers.get('content-type'));
+              console.log(`📏 Content-Length:`, response.headers.get('content-length'));
+            })
+            .catch(error => {
+              console.error(`❌ Erro ao carregar vídeo ${index + 1}:`, error);
+            });
+        }
+      });
+    }
+    
+    // Executar debug após carregar a página
+    window.addEventListener('load', function() {
+      setTimeout(debugVideoIssues, 2000);
+    });
+  </script>
 
 
   <script>
@@ -792,6 +820,33 @@ https://templatemo.com/tm-565-onix-digital
       const modalInfoTop = document.querySelector('.portfolio-modal-info-top');
       const closeBtn = document.querySelector('.portfolio-modal-close');
 
+      // Função para verificar se os vídeos carregam corretamente
+      function checkVideoLoading() {
+        document.querySelectorAll('.owl-portfolio video[data-video-fallback="true"]').forEach(function(video) {
+          video.addEventListener('loadeddata', function() {
+            video.setAttribute('data-loaded', 'true');
+          });
+          
+          video.addEventListener('error', function() {
+            console.warn('Vídeo não pôde ser carregado:', video.querySelector('source').src);
+            video.setAttribute('data-loaded', 'false');
+            // Mostrar fallback text
+            const fallbackText = video.querySelector('p');
+            if (fallbackText) {
+              fallbackText.style.display = 'block';
+            }
+          });
+
+          // Timeout para detectar vídeos que não carregam
+          setTimeout(function() {
+            if (!video.hasAttribute('data-loaded')) {
+              video.setAttribute('data-loaded', 'false');
+              console.warn('Timeout: Vídeo não carregou dentro do tempo esperado:', video.querySelector('source').src);
+            }
+          }, 5000); // 5 segundos timeout
+        });
+      }
+
       // Função para pausar todos os vídeos do carousel
       function pauseAllCarouselVideos() {
         document.querySelectorAll('.owl-portfolio video').forEach(function(video) {
@@ -881,6 +936,9 @@ https://templatemo.com/tm-565-onix-digital
           closeModal();
         }
       });
+
+      // Inicializar verificação de vídeos
+      checkVideoLoading();
     });
   </script>
 
