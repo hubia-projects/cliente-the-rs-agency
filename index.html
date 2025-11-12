@@ -264,16 +264,13 @@ https://templatemo.com/tm-565-onix-digital
         <!-- Vídeo 1 - Behind the Scenes -->
         <div class="item">
           <div class="thumb">
-            <video preload="metadata" muted playsinline>
-              <source src="assets/images/novas-midias/Behind the scenes_1.mp4" type="video/mp4" />
-              O seu navegador não suporta vídeos.
-            </video>
+            <iframe src="https://streamable.com/e/qdlb0t?autoplay=1&nocontrols=1" frameborder="0" allow="autoplay" allowfullscreen style="width:100%;height:100%;position:absolute;"></iframe>
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
             </div>
             <div class="hover-effect">
               <div class="inner-content">
-                <a href="#">
+                <a href="https://streamable.com/qdlb0t" target="_blank">
                   <h4>Behind the Scenes</h4>
                 </a>
                 <span>Processo Criativo</span>
@@ -330,16 +327,13 @@ https://templatemo.com/tm-565-onix-digital
         <!-- Vídeo 2 - Apresentação Pavilhões -->
         <div class="item">
           <div class="thumb">
-            <video preload="metadata" muted playsinline>
-              <source src="assets/images/novas-midias/Ovarense_Apresentação Pavilhões.mp4" type="video/mp4" />
-              O seu navegador não suporta vídeos.
-            </video>
+            <iframe src="https://streamable.com/e/6q0zps?autoplay=1&nocontrols=1" frameborder="0" allow="autoplay" allowfullscreen style="width:100%;height:100%;position:absolute;"></iframe>
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
             </div>
             <div class="hover-effect">
               <div class="inner-content">
-                <a href="#">
+                <a href="https://streamable.com/6q0zps" target="_blank">
                   <h4>Ovarense Basquetebol</h4>
                 </a>
                 <span>Apresentação Pavilhões</span>
@@ -678,10 +672,7 @@ https://templatemo.com/tm-565-onix-digital
         <span id="modalDescriptionTop"></span>
       </div>
       <img id="modalImage" src="" alt="" style="display:none;">
-      <video id="modalVideo" controls controlslist="nodownload" preload="metadata" style="display:none;">
-        <source id="modalVideoSource" src="" type="video/mp4">
-        O seu navegador não suporta vídeos.
-      </video>
+      <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="display:none;width:100%;height:80vh;"></iframe>
       <div class="portfolio-modal-info">
         <h4 id="modalTitle"></h4>
         <span id="modalDescription"></span>
@@ -782,8 +773,7 @@ https://templatemo.com/tm-565-onix-digital
     document.addEventListener('DOMContentLoaded', function() {
       const modal = document.getElementById('portfolioModal');
       const modalImage = document.getElementById('modalImage');
-      const modalVideo = document.getElementById('modalVideo');
-      const modalVideoSource = document.getElementById('modalVideoSource');
+      const modalIframe = document.getElementById('modalIframe');
       const modalTitle = document.getElementById('modalTitle');
       const modalDescription = document.getElementById('modalDescription');
       const modalTitleTop = document.getElementById('modalTitleTop');
@@ -792,55 +782,47 @@ https://templatemo.com/tm-565-onix-digital
       const modalInfoTop = document.querySelector('.portfolio-modal-info-top');
       const closeBtn = document.querySelector('.portfolio-modal-close');
 
-      // Função para pausar todos os vídeos do carousel
-      function pauseAllCarouselVideos() {
-        document.querySelectorAll('.owl-portfolio video').forEach(function(video) {
-          video.pause();
-          video.currentTime = 0;
-        });
-      }
-
       // Função para abrir modal com imagem
       function openImageModal(imgSrc, title, description) {
-        pauseAllCarouselVideos(); // Pausar todos os vídeos do carousel
         modalImage.src = imgSrc;
         modalImage.style.display = 'block';
-        modalVideo.style.display = 'none';
-        modalVideo.pause();
+        modalIframe.style.display = 'none';
+        modalIframe.src = '';
         modalTitle.textContent = title;
         modalDescription.textContent = description;
         // Mostrar info embaixo para imagens
         modalInfo.style.display = 'block';
         modalInfoTop.style.display = 'none';
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevenir scroll
+        document.body.style.overflow = 'hidden';
       }
 
-      // Função para abrir modal com vídeo
-      function openVideoModal(videoSrc, title, description) {
-        pauseAllCarouselVideos(); // Pausar todos os vídeos do carousel
-        modalVideoSource.src = videoSrc;
-        modalVideo.load();
-        modalVideo.style.display = 'block';
+      // Função para abrir modal com iframe (vídeo Streamable)
+      function openIframeModal(iframeSrc, title, description) {
+        // Extrair ID do Streamable e construir URL do player
+        let streamableId = iframeSrc;
+        if (iframeSrc.includes('streamable.com/')) {
+          streamableId = iframeSrc.split('streamable.com/')[1].split('?')[0].replace('e/', '');
+          iframeSrc = `https://streamable.com/e/${streamableId}`;
+        }
+        
+        modalIframe.src = iframeSrc;
+        modalIframe.style.display = 'block';
         modalImage.style.display = 'none';
         modalTitleTop.textContent = title;
         modalDescriptionTop.textContent = description;
-        // Mostrar info em cima para vídeos (não interfere com controles)
+        // Mostrar info em cima para vídeos
         modalInfo.style.display = 'none';
         modalInfoTop.style.display = 'block';
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        // Iniciar reprodução automaticamente quando o modal abrir
-        setTimeout(function() {
-          modalVideo.play();
-        }, 100);
       }
 
       // Função para fechar modal
       function closeModal() {
         modal.classList.remove('active');
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
+        modalIframe.src = '';
+        modalImage.src = '';
         document.body.style.overflow = 'auto';
       }
 
@@ -848,22 +830,23 @@ https://templatemo.com/tm-565-onix-digital
       document.querySelectorAll('.owl-portfolio .item').forEach(function(item) {
         const thumb = item.querySelector('.thumb');
         const img = thumb.querySelector('img');
-        const video = thumb.querySelector('video');
+        const iframe = thumb.querySelector('iframe');
+        const link = item.querySelector('.inner-content a');
         const title = item.querySelector('.inner-content h4').textContent;
         const description = item.querySelector('.inner-content span').textContent;
 
         thumb.addEventListener('click', function(e) {
-          // Prevenir que o hover-effect interfira
           e.stopPropagation();
           
           if (img) {
             openImageModal(img.src, title, description);
-          } else if (video) {
-            const videoSrc = video.querySelector('source').src;
-            openVideoModal(videoSrc, title, description);
+          } else if (iframe || link.href.includes('streamable.com')) {
+            const streamableUrl = link.href;
+            openIframeModal(streamableUrl, title, description);
           }
         });
       });
+            openImageModal(img.src, title, description);
 
       // Fechar modal ao clicar no X
       closeBtn.addEventListener('click', closeModal);
@@ -879,6 +862,10 @@ https://templatemo.com/tm-565-onix-digital
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
           closeModal();
+        }
+      });
+    });
+  </script>
         }
       });
     });

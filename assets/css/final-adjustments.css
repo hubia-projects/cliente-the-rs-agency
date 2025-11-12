@@ -290,7 +290,8 @@
 }
 
 .portfolio-modal-content img,
-.portfolio-modal-content video {
+.portfolio-modal-content video,
+.portfolio-modal-content iframe {
     width: 100%;
     height: auto;
     max-height: 90vh;
@@ -301,6 +302,12 @@
 
 /* Estilos melhorados para o player de vídeo */
 .portfolio-modal-content video {
+    background-color: #000;
+}
+
+/* Iframe do Streamable */
+.portfolio-modal-content iframe {
+    min-height: 500px;
     background-color: #000;
 }
 
