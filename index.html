@@ -263,14 +263,14 @@ https://templatemo.com/tm-565-onix-digital
         
         <!-- Vídeo 1 - Behind the Scenes -->
         <div class="item">
-          <div class="thumb">
-            <iframe src="https://streamable.com/e/qdlb0t?autoplay=1&nocontrols=1" frameborder="0" allow="autoplay" allowfullscreen style="width:100%;height:100%;position:absolute;"></iframe>
+          <div class="thumb" data-video="https://streamable.com/qdlb0t">
+            <img src="assets/images/novas-midias/video-thumb-1.jpg" alt="Behind the Scenes" loading="lazy" onerror="this.src='https://via.placeholder.com/800x450/333333/ffffff?text=Behind+the+Scenes+Video'" />
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
             </div>
             <div class="hover-effect">
               <div class="inner-content">
-                <a href="https://streamable.com/qdlb0t" target="_blank">
+                <a href="https://streamable.com/qdlb0t" data-video-url="https://streamable.com/qdlb0t">
                   <h4>Behind the Scenes</h4>
                 </a>
                 <span>Processo Criativo</span>
@@ -326,14 +326,14 @@ https://templatemo.com/tm-565-onix-digital
         
         <!-- Vídeo 2 - Apresentação Pavilhões -->
         <div class="item">
-          <div class="thumb">
-            <iframe src="https://streamable.com/e/6q0zps?autoplay=1&nocontrols=1" frameborder="0" allow="autoplay" allowfullscreen style="width:100%;height:100%;position:absolute;"></iframe>
+          <div class="thumb" data-video="https://streamable.com/6q0zps">
+            <img src="assets/images/novas-midias/video-thumb-2.jpg" alt="Ovarense Basquetebol" loading="lazy" onerror="this.src='https://via.placeholder.com/800x450/333333/ffffff?text=Ovarense+Basquetebol+Video'" />
             <div class="video-play-icon">
               <i class="fa fa-play-circle"></i>
             </div>
             <div class="hover-effect">
               <div class="inner-content">
-                <a href="https://streamable.com/6q0zps" target="_blank">
+                <a href="https://streamable.com/6q0zps" data-video-url="https://streamable.com/6q0zps">
                   <h4>Ovarense Basquetebol</h4>
                 </a>
                 <span>Apresentação Pavilhões</span>
@@ -799,11 +799,12 @@ https://templatemo.com/tm-565-onix-digital
 
       // Função para abrir modal com iframe (vídeo Streamable)
       function openIframeModal(iframeSrc, title, description) {
-        // Extrair ID do Streamable e construir URL do player
+        // Extrair ID do Streamable e construir URL do player embedado
         let streamableId = iframeSrc;
         if (iframeSrc.includes('streamable.com/')) {
           streamableId = iframeSrc.split('streamable.com/')[1].split('?')[0].replace('e/', '');
-          iframeSrc = `https://streamable.com/e/${streamableId}`;
+          // URL do player embedado do Streamable (mais confiável que iframe direto)
+          iframeSrc = `https://streamable.com/e/${streamableId}?autoplay=1`;
         }
         
         modalIframe.src = iframeSrc;
@@ -811,6 +812,7 @@ https://templatemo.com/tm-565-onix-digital
         modalImage.style.display = 'none';
         modalTitleTop.textContent = title;
         modalDescriptionTop.textContent = description;
+        
         // Mostrar info em cima para vídeos
         modalInfo.style.display = 'none';
         modalInfoTop.style.display = 'block';
@@ -830,23 +832,34 @@ https://templatemo.com/tm-565-onix-digital
       document.querySelectorAll('.owl-portfolio .item').forEach(function(item) {
         const thumb = item.querySelector('.thumb');
         const img = thumb.querySelector('img');
-        const iframe = thumb.querySelector('iframe');
         const link = item.querySelector('.inner-content a');
         const title = item.querySelector('.inner-content h4').textContent;
         const description = item.querySelector('.inner-content span').textContent;
 
         thumb.addEventListener('click', function(e) {
+          e.preventDefault();
           e.stopPropagation();
           
-          if (img) {
+          // Verificar se é um vídeo (tem atributo data-video ou link do streamable)
+          const videoUrl = thumb.getAttribute('data-video') || link.getAttribute('data-video-url');
+          
+          if (videoUrl && videoUrl.includes('streamable.com')) {
+            openIframeModal(videoUrl, title, description);
+          } else if (img && !videoUrl) {
             openImageModal(img.src, title, description);
-          } else if (iframe || link.href.includes('streamable.com')) {
-            const streamableUrl = link.href;
-            openIframeModal(streamableUrl, title, description);
           }
         });
+        
+        // Prevenir que o link abra em nova aba quando é vídeo
+        if (link) {
+          link.addEventListener('click', function(e) {
+            const videoUrl = link.getAttribute('data-video-url');
+            if (videoUrl) {
+              e.preventDefault();
+            }
+          });
+        }
       });
-            openImageModal(img.src, title, description);
 
       // Fechar modal ao clicar no X
       closeBtn.addEventListener('click', closeModal);
@@ -862,10 +875,6 @@ https://templatemo.com/tm-565-onix-digital
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
           closeModal();
-        }
-      });
-    });
-  </script>
         }
       });
     });

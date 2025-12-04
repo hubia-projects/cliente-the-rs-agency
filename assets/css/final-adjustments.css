@@ -423,6 +423,23 @@
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* Garantir que thumbnails de vídeo sejam exibidos corretamente */
+.owl-portfolio .thumb[data-video] {
+    position: relative;
+    cursor: pointer;
+}
+
+.owl-portfolio .thumb[data-video] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.owl-portfolio .thumb[data-video]:hover img {
+    opacity: 0.9;
+}
+
 /* Responsividade do Modal */
 @media (max-width: 768px) {
     .portfolio-modal-content {
