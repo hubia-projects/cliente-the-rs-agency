@@ -3,6 +3,76 @@
    Correções específicas para elementos problemáticos
    ======================================== */
 
+/* ========== FLOATING LABELS - TEXTAREA MENSAGEM ========== */
+
+/* Container do textarea com label flutuante */
+#contact fieldset.floating {
+    position: relative !important;
+    margin: 0 0 24px !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/* Textarea com espaço para o label */
+#contact fieldset.floating textarea#mensagem {
+    min-height: 120px !important;
+    padding: 16px 12px 12px 12px !important;
+    resize: vertical !important;
+    line-height: 1.5 !important;
+    background: #fff !important;
+    width: 100% !important;
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    font-family: inherit !important;
+    color: #222 !important;
+    box-sizing: border-box !important;
+}
+
+/* Label inicial - dentro do textarea */
+#contact fieldset.floating textarea#mensagem + label {
+    position: absolute !important;
+    left: 12px !important;
+    top: 16px !important;
+    font-size: 15px !important;
+    color: #888 !important;
+    pointer-events: none !important;
+    transition: all 0.25s ease !important;
+    background: #fff !important;
+    padding: 0 6px !important;
+    z-index: 1 !important;
+    line-height: 1 !important;
+}
+
+/* Label sobe quando textarea está focado */
+#contact fieldset.floating textarea#mensagem:focus + label {
+    top: -8px !important;
+    left: 8px !important;
+    font-size: 11px !important;
+    color: #716969 !important;
+    font-weight: 600 !important;
+    background: #fff !important;
+    padding: 0 6px !important;
+}
+
+/* Label sobe quando textarea tem conteúdo */
+#contact fieldset.floating textarea#mensagem:not(:placeholder-shown) + label {
+    top: -8px !important;
+    left: 8px !important;
+    font-size: 11px !important;
+    color: #716969 !important;
+    font-weight: 600 !important;
+    background: #fff !important;
+    padding: 0 6px !important;
+}
+
+/* Borda do textarea quando focado */
+#contact fieldset.floating textarea#mensagem:focus {
+    border-color: #716969 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(113, 105, 105, 0.1) !important;
+}
+
 /* ========== SEÇÃO BANNER - AJUSTES FINOS ========== */
 
 /* REDUZIR MARGEM BOTTOM DO BANNER para as outras seções subirem MUITO mais */
