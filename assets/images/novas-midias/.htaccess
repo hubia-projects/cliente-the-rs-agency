@@ -1,0 +1,25 @@
+# Configurações específicas para arquivos de vídeo
+<FilesMatch "\.(mp4|webm|ogg|avi|mov|m4v)$">
+    # MIME types corretos
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+    AddType video/ogg .ogg
+    
+    # Headers para compatibilidade web
+    Header set Access-Control-Allow-Origin "*"
+    Header set Accept-Ranges bytes
+    
+    # Cache otimizado para vídeos
+    ExpiresActive On
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+    
+    # Compressão desabilitada para vídeos (já são comprimidos)
+    SetEnv no-gzip dont-vary
+</FilesMatch>
+
+# Permitir acesso aos arquivos
+<Files "*">
+    Order allow,deny
+    Allow from all
+</Files>
